@@ -58,14 +58,14 @@ This will create a directory `results/<model-name>/` which will contain:
 usage: main.py ...
 
 General options:
-  name						Name of the model for storing or loading purposes.
-  -s, --seed SEED				Random seed.
-  -e, --epochs EPOCHS			Maximum number of epochs to run for.
-  -b, --batch-size BATCH_SIZE	Batch size for training.
-  --lr LR						Learning rate.
-  -z, --latent-dim LATENT_DIM	Dimension of the latent variable.
-  —tv --threshold-val			Threshold for Masking.
-  --sup_signal				Choice of Signal. (Examples: discreteprice, brand, circa, material, movement or a combination in the format <signal1>_<signal2> etc.)
+  name						                   Name of the model for storing or loading purposes.
+  -s, --seed SEED				             Random seed.
+  -e, --epochs EPOCHS			           Maximum number of epochs to run for.
+  -b, --batch-size BATCH_SIZE	       Batch size for training.
+    --lr LR						               Learning rate.
+  -z, --latent-dim     LATENT_DIM    Dimension of the latent variable.
+  —tv --threshold-val			           Threshold for Masking.
+  --sup_signal				               Choice of Signal. (Examples: discreteprice, brand, circa, material, movement or a combination in the format <signal1>_<signal2> etc.)
 
 Loss specific hyperparameters:
   --btcvae-A BTCVAE_A			Weight of the MI term (alpha in the paper).
