@@ -18,8 +18,6 @@ Sisodia, A, Burnap, A, and Kumar, V (2024). Generative Interpretable Visual Desi
 }
 ```
 
-## Usage
-
 ## Installation
 #### Libraries
 This codebase was built using the Pytorch neural net framework.  However, it also depends on over 100 other Python packages, as well as GPU libraries including CUDA runtimes and cuDNN kernel support. We can not guarantee this code will run and replicate unless the same environment and library versions are used.  To install these packages (including the same library versions), please use the following:
@@ -31,7 +29,7 @@ To download the dataset, please use the following links. Copy these files to ‘
 
 * #### [Watches Dataset](https://www.dropbox.com/scl/fo/akj3w8pat0lg1fa4ax480/h?rlkey=5d4ykq5br3kzkwarhi4ld4na8&dl=0)
 
-### Run
+#### Run
 
 Use `python main.py <param-name> <param-value>`. For example:
 
@@ -39,7 +37,7 @@ Use `python main.py <param-name> <param-value>`. For example:
 python main.py --sup_signal continuousprice -s 1 --name continuousprice_s1 --btcvae-B 1 --btcvae-M 16
 ```
 
-### Output
+#### Output
 
 This will create a directory `results/<model-name>/` which will contain:
 
@@ -54,7 +52,7 @@ This will create a directory `results/<model-name>/` which will contain:
 * **mean_params_test2.csv**: mean visual characteristics of all watches in the test2 dataset. 
 * **mean_params_train.csv**: mean visual characteristics of all watches in the train dataset. 
 
-### Help
+#### Help
 
 ```
 usage: main.py ...
@@ -77,12 +75,12 @@ Loss specific hyperparameters:
 
 ```
 
-### Hyperparameter Selection
+#### Hyperparameter Selection
 
 Run the same model configuration (i.e. a combination of the supervisory signal and loss-specific hyperparameters) for different random seeds. Select the optimal loss-specific hyperparameters for a particular supervisory signal combination based on the lowest supervised loss on the validation dataset (averaged across different seeds).
 
 
-### UDR Calculation
+#### UDR Calculation
 
 Run the most optimal loss-specific hyperparameters for each combination of the supervisory signal across different random seeds. Copy the files stored in ‘results/<model-name>/‘ directory with the filename ending in ‘mean_params_test2.csv’ to the ‘calculate_udr’ folder. Switch to an R environment and calculate UDR using the below command. You may need to modify the R script and adjust the model name.
 
