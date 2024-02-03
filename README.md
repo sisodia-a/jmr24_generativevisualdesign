@@ -1,3 +1,5 @@
+<p align="center"><img src="./conjoint_analysis_and_ideal_point_design/data_conjointanalysis/disentanglement_example.png" alt="disentanglement_example" style="display: block; margin-left: auto; margin-right: auto; width: 100%; text-align: center;" > </p>
+
 ## Generative Interpretable Visual Design: Using Disentanglement for Visual Conjoint Analysis
 Code to replicate results in, "Generative Interpretable Visual Design: Using Disentanglement for Visual Conjoint Analysis."  
 
