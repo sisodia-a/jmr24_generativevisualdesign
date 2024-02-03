@@ -84,14 +84,15 @@ Run the same model configuration (i.e. a combination of the supervisory signal a
 
 Run the most optimal loss-specific hyperparameters for each combination of the supervisory signal across different random seeds. Copy the files stored in ‘results/<model-name>/‘ directory with the filename ending in ‘mean_params_test2.csv’ to the ‘calculate_udr’ folder. Switch to an R environment and calculate UDR using the below command. You may need to modify the R script and adjust the model name.
 
-#### Conjoint Analysis and ``Ideal Point'' Generative Design 
-
-See the directory `conjoint_analysis_and_ideal_point_design` for an example ipython notebook for running the hiearachical Bayeisan estimation and replicate results.  Note that generating the ``ideal point`` design requires inputting the ``ideal point" embedding values into the generative model from the disentanglement portion of this codebase.
-
-
 ```
 Rscript udr_calculation.R --sup_signal='brand'
 ```
+
+#### Conjoint Analysis and "Ideal Point'' Generative Design 
+
+See the directory `/conjoint_analysis_and_ideal_point_design` for an example ipython notebook for running the hiearachical Bayeisan estimation and replicate results.
+
+Note that generating the ideal point design requires inputting the "ideal point" embedding values into the generative model from the disentanglement portion of this codebase.
 
 ## Citation
 Feel free to use this code for your research. If you find this code useful, please use the following citation information in plaintext or BibTeX format:
