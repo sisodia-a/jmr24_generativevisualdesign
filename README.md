@@ -185,17 +185,12 @@ Note that generating the ideal point design requires inputting the "ideal point"
 ./post_model_search/main.py: main python execution file 
 ./post_model_search/main_viz.py: main python execution file to generate images for conjoint analysis
 
-
-
-
-
 ## Computing Resources
 
-
-## Computing Resources
-
+We used 64G GPU to run each model instance of 100 epoch, 64 batch size, 5e-4 learning rate. Each model run takes 8 minutes. We train 10 random seeds * 32 supervisory signal combinations * 25*15 grid values = 120,000 models. This would mean 16000 hours of model training.
 
 ## Citation
+
 Feel free to use this code for your research. If you find this code useful, please use the following citation information in plaintext or BibTeX format:
 
 Sisodia, A, Burnap, A, and Kumar, V (2024). Generative Interpretable Visual Design: Using Disentanglement for Visual Conjoint Analysis. Journal of Marketing Research (under review).
