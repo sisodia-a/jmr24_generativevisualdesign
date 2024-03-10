@@ -96,6 +96,35 @@ See the directory `/conjoint_analysis_and_ideal_point_design` for an example ipy
 
 Note that generating the ideal point design requires inputting the "ideal point" embedding values into the generative model from the disentanglement portion of this codebase.
 
+#### Steps to Reproduce Figures & Tables
+
+1. Change directory to post_model_search folder and run the following command on a 64G GPU. 
+
+```
+python main.py --sup_signal brand_circa_movement -s 9 --name brand_circa_movement_s9 --btcvae-B 50 --btcvae-M 1
+```
+
+2. This will create a directory `results/brand_circa_movement_s9/` which will contain:
+
+* **specs.json**: The parameters used to run the program (default and modified with CLI).
+* **train_losses.csv**: All (sub-)losses computed during training on the train and validation dataset.
+* **test_losses.log**: All (sub-)losses computed at the end of training on the test1 and test2 dataset. 
+* **reconstruct_traverse.png**: latent traversals of latent dimensions. 
+* **filename_test1.csv**: filenames of all watches in the test1 dataset. 
+* **filename_test2.csv**: filenames of all watches in the test2 dataset. 
+* **filename_train.csv**: filenames of all watches in the train dataset. 
+* **mean_params_test1.csv**: mean visual characteristics of all watches in the test1 dataset. 
+* **mean_params_test2.csv**: mean visual characteristics of all watches in the test2 dataset. 
+* **mean_params_train.csv**: mean visual characteristics of all watches in the train dataset. 
+
+Files named **reconstruct_traverse.png** will produce images similar to Figure 5 in the paper.
+
+3. Change directory to figure_pdfs to see Figure 1-4.
+
+4. Change directory to Figures+Tables and execute the figures_and_tables.Rmd to produce Table 2 and Figure 6 in the paper.
+
+5. Change directory to conjoint_analysis_and_ideal_point_design and execute Example_Python_Notebook_with_Results_and_Plots.ipynb to produce Table 6-7 and Figure 10-12 in the paper. Note, that we would only get the visual characteristic vector corresponding to Figure 11 and would then have to pass it through the decoder of the disentanglement model to produce the designs seen in Figure 11. 
+
 ## List of Files
 
 ./README.md: README file
@@ -184,6 +213,11 @@ Note that generating the ideal point design requires inputting the "ideal point"
 
 ./post_model_search/main.py: main python execution file 
 ./post_model_search/main_viz.py: main python execution file to generate images for conjoint analysis
+
+./figure_pdfs/fig1.pdf: Figure 1 of the Paper
+./figure_pdfs/fig2.pdf: Figure 2 of the Paper
+./figure_pdfs/fig3.pdf: Figure 3 of the Paper
+./figure_pdfs/fig4.pdf: Figure 4 of the Paper
 
 ## Computing Resources
 
