@@ -35,17 +35,51 @@ To download the dataset, please use the following links. Copy these files to ‘
 
 #### Step 1
 
-Go to './hyperparameter_selection' and run disentanglement model with a unique $\beta$, $\delta$, and supervisory signal combination with 10 different seeds.
+Go to './hyperparameter_selection' and run disentanglement model with a unique $\beta$, $\delta$, and supervisory signal combination with 10 different seeds. Vary $\beta$, $\delta$, and supervisory signal combination.
 
-Use `python main.py <param-name> <param-value>`. For example:
+For example, in the below command, the seed is set to 1, $\beta$=18, $\delta$=50, and the supervisory signal is brand. The model name is brand_s1. 
 
 ```
-python main.py --sup_signal continuousprice -s 1 --name continuousprice_s1 --btcvae-B 1 --btcvae-M 16
+python main.py --sup_signal brand -s 1 --name brand_s1 --btcvae-B 18 --btcvae-M 50
 ```
 
-#### Output
+In the above command, seed, $\beta$, and $\delta$ is a scalar value. This codebase, specific to the watch dataset, supports the following set of discrete supporting signals. Using any other name will result in an error.
 
-This will create a directory `results/<model-name>/` which will contain:
+```
+discreteprice
+brand
+circa
+material
+movement
+discreteprice_brand
+discreteprice_circa
+discreteprice_material
+discreteprice_movement
+brand_circa
+brand_material
+brand_movement
+circa_material
+circa_movement
+material_movement
+discreteprice_brand_circa
+discreteprice_brand_material
+discreteprice_brand_movement
+discreteprice_circa_material
+discreteprice_circa_movement
+discreteprice_material_movement
+brand_circa_material
+brand_circa_movement
+brand_material_movement
+circa_material_movement
+discreteprice_brand_circa_material
+discreteprice_brand_circa_movement
+discreteprice_brand_material_movement
+discreteprice_circa_material_movement
+brand_circa_material_movement
+discreteprice_brand_circa_material_movement
+```
+
+The above command will create a directory `results/<model-name>/` which will contain:
 
 * **specs.json**: The parameters used to run the program (default and modified with CLI).
 * **train_losses.csv**: All (sub-)losses computed during training on the train and validation dataset.
@@ -58,41 +92,42 @@ This will create a directory `results/<model-name>/` which will contain:
 * **mean_params_test2.csv**: mean visual characteristics of all watches in the test2 dataset. 
 * **mean_params_train.csv**: mean visual characteristics of all watches in the train dataset. 
 
-#### Help
+Select the value of $\beta$ and $\delta$ for each supervisory signal at which the average supervised loss across 10 seeds on a validation dataset is lowest. The supervised loss on the test set is stored as 'sup_loss_test' in the json file with the name ending in test_losses.log in the directory `results/<model-name>/` for each combination of seed, $\beta$, $\delta$, and the supervisory signal
+
+#### Step 2
+
+Go to './post_model_search' and run disentanglement model at the optimal $\beta$ and $\delta$ for each supervisory signal combination at 10 different seeds. 
+
+For the watch dataset, execute the commands listed in execute_step2.txt to use the values listed in the paper. For example, see the first line of this file:
 
 ```
-usage: main.py ...
-
-General options:
-  name Name of the model for storing or loading purposes.
-  -s, --seed SEED Random seed.
-  -e, --epochs EPOCHS Maximum number of epochs to run for.
-  -b, --batch-size BATCH_SIZE Batch size for training.
-    --lr LR Learning rate.
-  -z, --latent-dim LATENT_DIM Dimension of the latent variable.
-  —tv --threshold-val Threshold for Masking.
-  --sup_signal Choice of Signal. (Examples: discreteprice, brand, circa, material, movement or a combination in the format <signal1>_<signal2> etc.)
-
-Loss specific hyperparameters:
-  --btcvae-A BTCVAE_A			Weight of the MI term (alpha in the paper).
-  --btcvae-G BTCVAE_G			Weight of the dim-wise KL term (gamma in the paper).
-  --btcvae-B BTCVAE_B			Weight of the TC term (beta in the paper).
-  --btcvae-M BTCVAE_M			Weight of the supervised loss term (delta in the paper).
-
+python main.py --sup_signal continuousprice -s 1 --name continuousprice_s1 --btcvae-B 1 --btcvae-M 16 
 ```
 
-#### Hyperparameter Selection
+The above command will create a directory `results/<model-name>/` which will contain:
 
-Run the same model configuration (i.e. a combination of the supervisory signal and loss-specific hyperparameters) for different random seeds. Select the optimal loss-specific hyperparameters for a particular supervisory signal combination based on the lowest supervised loss on the validation dataset (averaged across different seeds).
+* **specs.json**: The parameters used to run the program (default and modified with CLI).
+* **train_losses.csv**: All (sub-)losses computed during training on the train and validation dataset.
+* **test_losses.log**: All (sub-)losses computed at the end of training on the test1 and test2 dataset. 
+* **reconstruct_traverse.png**: latent traversals of latent dimensions. 
+* **filename_test1.csv**: filenames of all watches in the test1 dataset. 
+* **filename_test2.csv**: filenames of all watches in the test2 dataset. 
+* **filename_train.csv**: filenames of all watches in the train dataset. 
+* **mean_params_test1.csv**: mean visual characteristics of all watches in the test1 dataset. 
+* **mean_params_test2.csv**: mean visual characteristics of all watches in the test2 dataset. 
+* **mean_params_train.csv**: mean visual characteristics of all watches in the train dataset. 
 
+Select the value of $\beta$ and $\delta$ for each supervisory signal at which the average supervised loss across 10 seeds on a validation dataset is lowest. The supervised loss on the test set is stored as 'sup_loss_test' in the json file with the name ending in test_losses.log in the directory `results/<model-name>/` for each combination of seed, $\beta$, $\delta$, and the supervisory signal
 
-#### UDR Calculation
+#### Step 3
 
-Run the most optimal loss-specific hyperparameters for each combination of the supervisory signal across different random seeds. Copy the files stored in ‘results/<model-name>/‘ directory with the filename ending in ‘mean_params_test2.csv’ to the ‘calculate_udr’ folder. Switch to an R environment and calculate UDR using the below command. You may need to modify the R script and adjust the model name.
+Copy the files stored in ‘results/<model-name>/‘ directory with the filename ending in ‘mean_params_test2.csv’ to the ‘calculate_udr’ folder. Switch to an R environment and calculate UDR for each supervisory signal using the below command.
 
 ```
 Rscript udr_calculation.R --sup_signal='brand'
 ```
+
+
 
 #### Conjoint Analysis and "Ideal Point'' Generative Design 
 
