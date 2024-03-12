@@ -34,7 +34,7 @@ To download the dataset, please use the following links. Copy these files to ‘
 
 ## Replication Steps
 
-#### Step 1
+#### Step 1: Grid Search for Hyperparamaters
 
 Go to './hyperparameter_selection' and run disentanglement model with a unique $\beta$, $\delta$, and supervisory signal combination with 10 different seeds. Vary $\beta$, $\delta$, and supervisory signal combination.
 
@@ -95,7 +95,7 @@ The above command will create a directory `results/<model-name>/` which will con
 
 Select the value of $\beta$ and $\delta$ for each supervisory signal at which the average supervised loss across 10 seeds on a validation dataset is lowest. The supervised loss on the test set is stored as 'sup_loss_test' in the json file with the name ending in test_losses.log in the directory `results/<model-name>/` for each combination of seed, $\beta$, $\delta$, and the supervisory signal
 
-#### Step 2
+#### Step 2: Comparison of Different Supervisory Signals
 
 Go to './post_model_search' and run disentanglement model at the optimal $\beta$ and $\delta$ for each supervisory signal combination at 10 different seeds. 
 
@@ -120,7 +120,7 @@ The above command will create a directory `results/<model-name>/` which will con
 
 Copy the files stored in ‘results/<model-name>/‘ directory with the filename ending in ‘mean_params_test2.csv’ to the ‘calculate_udr’ folder.
 
-#### Step 3
+#### Step 3: UDR Calculation
 
 Go to './calculate_udr' to compare the UDRs for different supervisory signals. Switch to an R environment and execute the Rscript udr_calculation.R with the supervisory signal as the argument. For example:
 
@@ -130,7 +130,11 @@ Rscript udr_calculation.R --sup_signal='brand'
 
 The results will be appended to filenamed udr.log. It will replicate results in Table F.1 of the paper.
 
-#### Conjoint Analysis and "Ideal Point'' Generative Design 
+#### Step 4: Helper Script
+
+Go to './r_script'. Switch to an R environment and execute the Rscript replication_script.Rmd to produce Table 2, D.1, E.1 and Figure 6 of the paper.
+
+#### Step 5: Conjoint Analysis and "Ideal Point'' Generative Design 
 
 See the directory `/conjoint_analysis_and_ideal_point_design` for an example ipython notebook for running the hiearachical Bayeisan estimation and produce Table 6-7 and Figure 10-12 in the paper.
 
