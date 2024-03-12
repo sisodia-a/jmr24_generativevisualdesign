@@ -1,0 +1,362 @@
+python main.py --sup_signal continuousprice -s 1 --name continuousprice_s1 --btcvae-B 1 --btcvae-M 16 
+python main.py --sup_signal discreteprice -s 1 --name discreteprice_s1 --btcvae-B 22 --btcvae-M 45
+python main.py --sup_signal brand -s 1 --name brand_s1 --btcvae-B 18 --btcvae-M 50
+python main.py --sup_signal circa -s 1 --name circa_s1 --btcvae-B 4 --btcvae-M 35
+python main.py --sup_signal material -s 1 --name material_s1 --btcvae-B 6 --btcvae-M 25
+python main.py --sup_signal movement -s 1 --name movement_s1 --btcvae-B 4 --btcvae-M 20
+python main.py --sup_signal discreteprice_brand -s 1 --name discreteprice_brand_s1 --btcvae-B 6 --btcvae-M 25
+python main.py --sup_signal discreteprice_circa -s 1 --name discreteprice_circa_s1 --btcvae-B 4 --btcvae-M 18
+python main.py --sup_signal discreteprice_material -s 1 --name discreteprice_material_s1 --btcvae-B 4 --btcvae-M 20
+python main.py --sup_signal discreteprice_movement -s 1 --name discreteprice_movement_s1 --btcvae-B 12 --btcvae-M 20
+python main.py --sup_signal brand_circa -s 1 --name brand_circa_s1 --btcvae-B 48 --btcvae-M 5
+python main.py --sup_signal brand_material -s 1 --name brand_material_s1 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal brand_movement -s 1 --name brand_movement_s1 --btcvae-B 6 --btcvae-M 20
+python main.py --sup_signal circa_material -s 1 --name circa_material_s1 --btcvae-B 36 --btcvae-M 1
+python main.py --sup_signal circa_movement -s 1 --name circa_movement_s1 --btcvae-B 50 --btcvae-M 5
+python main.py --sup_signal material_movement -s 1 --name material_movement_s1 --btcvae-B 6 --btcvae-M 10
+python main.py --sup_signal discreteprice_brand_circa -s 1 --name discreteprice_brand_circa_s1 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_material -s 1 --name discreteprice_brand_material_s1 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_movement -s 1 --name discreteprice_brand_movement_s1 --btcvae-B 48 --btcvae-M 1
+python main.py --sup_signal discreteprice_circa_material -s 1 --name discreteprice_circa_material_s1 --btcvae-B 46 --btcvae-M 1
+python main.py --sup_signal discreteprice_circa_movement -s 1 --name discreteprice_circa_movement_s1 --btcvae-B 42 --btcvae-M 1
+python main.py --sup_signal discreteprice_material_movement -s 1 --name discreteprice_material_movement_s1 --btcvae-B 1 --btcvae-M 1
+python main.py --sup_signal brand_circa_material -s 1 --name brand_circa_material_s1 --btcvae-B 48 --btcvae-M 1
+python main.py --sup_signal brand_circa_movement -s 1 --name brand_circa_movement_s1 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal brand_material_movement -s 1 --name brand_material_movement_s1 --btcvae-B 40 --btcvae-M 1
+python main.py --sup_signal circa_material_movement -s 1 --name circa_material_movement_s1 --btcvae-B 48 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_circa_material -s 1 --name discreteprice_brand_circa_material_s1 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_circa_movement -s 1 --name discreteprice_brand_circa_movement_s1 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_material_movement -s 1 --name discreteprice_brand_material_movement_s1 --btcvae-B 44 --btcvae-M 1
+python main.py --sup_signal discreteprice_circa_material_movement -s 1 --name discreteprice_circa_material_movement_s1 --btcvae-B 44 --btcvae-M 1
+python main.py --sup_signal brand_circa_material_movement -s 1 --name brand_circa_material_movement_s1 --btcvae-B 44 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_circa_material_movement -s 1 --name discreteprice_brand_circa_material_movement_s1 --btcvae-B 44 --btcvae-M 1
+
+python main.py --sup_signal continuousprice -s 2 --name continuousprice_s2 --btcvae-B 1 --btcvae-M 16
+python main.py --sup_signal discreteprice -s 2 --name discreteprice_s2 --btcvae-B 22 --btcvae-M 45
+python main.py --sup_signal brand -s 2 --name brand_s2 --btcvae-B 18 --btcvae-M 50
+python main.py --sup_signal circa -s 2 --name circa_s2 --btcvae-B 4 --btcvae-M 35
+python main.py --sup_signal material -s 2 --name material_s2 --btcvae-B 6 --btcvae-M 25
+python main.py --sup_signal movement -s 2 --name movement_s2 --btcvae-B 4 --btcvae-M 20
+python main.py --sup_signal discreteprice_brand -s 2 --name discreteprice_brand_s2 --btcvae-B 6 --btcvae-M 25
+python main.py --sup_signal discreteprice_circa -s 2 --name discreteprice_circa_s2 --btcvae-B 4 --btcvae-M 18
+python main.py --sup_signal discreteprice_material -s 2 --name discreteprice_material_s2 --btcvae-B 4 --btcvae-M 20
+python main.py --sup_signal discreteprice_movement -s 2 --name discreteprice_movement_s2 --btcvae-B 12 --btcvae-M 20
+python main.py --sup_signal brand_circa -s 2 --name brand_circa_s2 --btcvae-B 48 --btcvae-M 5
+python main.py --sup_signal brand_material -s 2 --name brand_material_s2 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal brand_movement -s 2 --name brand_movement_s2 --btcvae-B 6 --btcvae-M 20
+python main.py --sup_signal circa_material -s 2 --name circa_material_s2 --btcvae-B 36 --btcvae-M 1
+python main.py --sup_signal circa_movement -s 2 --name circa_movement_s2 --btcvae-B 50 --btcvae-M 5
+python main.py --sup_signal material_movement -s 2 --name material_movement_s2 --btcvae-B 6 --btcvae-M 10
+python main.py --sup_signal discreteprice_brand_circa -s 2 --name discreteprice_brand_circa_s2 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_material -s 2 --name discreteprice_brand_material_s2 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_movement -s 2 --name discreteprice_brand_movement_s2 --btcvae-B 48 --btcvae-M 1
+python main.py --sup_signal discreteprice_circa_material -s 2 --name discreteprice_circa_material_s2 --btcvae-B 46 --btcvae-M 1
+python main.py --sup_signal discreteprice_circa_movement -s 2 --name discreteprice_circa_movement_s2 --btcvae-B 42 --btcvae-M 1
+python main.py --sup_signal discreteprice_material_movement -s 2 --name discreteprice_material_movement_s2 --btcvae-B 1 --btcvae-M 1
+python main.py --sup_signal brand_circa_material -s 2 --name brand_circa_material_s2 --btcvae-B 48 --btcvae-M 1
+python main.py --sup_signal brand_circa_movement -s 2 --name brand_circa_movement_s2 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal brand_material_movement -s 2 --name brand_material_movement_s2 --btcvae-B 40 --btcvae-M 1
+python main.py --sup_signal circa_material_movement -s 2 --name circa_material_movement_s2 --btcvae-B 48 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_circa_material -s 2 --name discreteprice_brand_circa_material_s2 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_circa_movement -s 2 --name discreteprice_brand_circa_movement_s2 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_material_movement -s 2 --name discreteprice_brand_material_movement_s2 --btcvae-B 44 --btcvae-M 1
+python main.py --sup_signal discreteprice_circa_material_movement -s 2 --name discreteprice_circa_material_movement_s2 --btcvae-B 44 --btcvae-M 1
+python main.py --sup_signal brand_circa_material_movement -s 2 --name brand_circa_material_movement_s2 --btcvae-B 44 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_circa_material_movement -s 2 --name discreteprice_brand_circa_material_movement_s2 --btcvae-B 44 --btcvae-M 1
+
+python main.py --sup_signal continuousprice -s 3 --name continuousprice_s3 --btcvae-B 1 --btcvae-M 16
+python main.py --sup_signal discreteprice -s 3 --name discreteprice_s3 --btcvae-B 22 --btcvae-M 45
+python main.py --sup_signal brand -s 3 --name brand_s3 --btcvae-B 18 --btcvae-M 50
+python main.py --sup_signal circa -s 3 --name circa_s3 --btcvae-B 4 --btcvae-M 35
+python main.py --sup_signal material -s 3 --name material_s3 --btcvae-B 6 --btcvae-M 25
+python main.py --sup_signal movement -s 3 --name movement_s3 --btcvae-B 4 --btcvae-M 20
+python main.py --sup_signal discreteprice_brand -s 3 --name discreteprice_brand_s3 --btcvae-B 6 --btcvae-M 25
+python main.py --sup_signal discreteprice_circa -s 3 --name discreteprice_circa_s3 --btcvae-B 4 --btcvae-M 18
+python main.py --sup_signal discreteprice_material -s 3 --name discreteprice_material_s3 --btcvae-B 4 --btcvae-M 20
+python main.py --sup_signal discreteprice_movement -s 3 --name discreteprice_movement_s3 --btcvae-B 12 --btcvae-M 20
+python main.py --sup_signal brand_circa -s 3 --name brand_circa_s3 --btcvae-B 48 --btcvae-M 5
+python main.py --sup_signal brand_material -s 3 --name brand_material_s3 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal brand_movement -s 3 --name brand_movement_s3 --btcvae-B 6 --btcvae-M 20
+python main.py --sup_signal circa_material -s 3 --name circa_material_s3 --btcvae-B 36 --btcvae-M 1
+python main.py --sup_signal circa_movement -s 3 --name circa_movement_s3 --btcvae-B 50 --btcvae-M 5
+python main.py --sup_signal material_movement -s 3 --name material_movement_s3 --btcvae-B 6 --btcvae-M 10
+python main.py --sup_signal discreteprice_brand_circa -s 3 --name discreteprice_brand_circa_s3 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_material -s 3 --name discreteprice_brand_material_s3 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_movement -s 3 --name discreteprice_brand_movement_s3 --btcvae-B 48 --btcvae-M 1
+python main.py --sup_signal discreteprice_circa_material -s 3 --name discreteprice_circa_material_s3 --btcvae-B 46 --btcvae-M 1
+python main.py --sup_signal discreteprice_circa_movement -s 3 --name discreteprice_circa_movement_s3 --btcvae-B 42 --btcvae-M 1
+python main.py --sup_signal discreteprice_material_movement -s 3 --name discreteprice_material_movement_s3 --btcvae-B 1 --btcvae-M 1
+python main.py --sup_signal brand_circa_material -s 3 --name brand_circa_material_s3 --btcvae-B 48 --btcvae-M 1
+python main.py --sup_signal brand_circa_movement -s 3 --name brand_circa_movement_s3 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal brand_material_movement -s 3 --name brand_material_movement_s3 --btcvae-B 40 --btcvae-M 1
+python main.py --sup_signal circa_material_movement -s 3 --name circa_material_movement_s3 --btcvae-B 48 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_circa_material -s 3 --name discreteprice_brand_circa_material_s3 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_circa_movement -s 3 --name discreteprice_brand_circa_movement_s3 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_material_movement -s 3 --name discreteprice_brand_material_movement_s3 --btcvae-B 44 --btcvae-M 1
+python main.py --sup_signal discreteprice_circa_material_movement -s 3 --name discreteprice_circa_material_movement_s3 --btcvae-B 44 --btcvae-M 1
+python main.py --sup_signal brand_circa_material_movement -s 3 --name brand_circa_material_movement_s3 --btcvae-B 44 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_circa_material_movement -s 3 --name discreteprice_brand_circa_material_movement_s3 --btcvae-B 44 --btcvae-M 1
+
+python main.py --sup_signal continuousprice -s 4 --name continuousprice_s4 --btcvae-B 1 --btcvae-M 16
+python main.py --sup_signal discreteprice -s 4 --name discreteprice_s4 --btcvae-B 22 --btcvae-M 45
+python main.py --sup_signal brand -s 4 --name brand_s4 --btcvae-B 18 --btcvae-M 50
+python main.py --sup_signal circa -s 4 --name circa_s4 --btcvae-B 4 --btcvae-M 35
+python main.py --sup_signal material -s 4 --name material_s4 --btcvae-B 6 --btcvae-M 25
+python main.py --sup_signal movement -s 4 --name movement_s4 --btcvae-B 4 --btcvae-M 20
+python main.py --sup_signal discreteprice_brand -s 4 --name discreteprice_brand_s4 --btcvae-B 6 --btcvae-M 25
+python main.py --sup_signal discreteprice_circa -s 4 --name discreteprice_circa_s4 --btcvae-B 4 --btcvae-M 18
+python main.py --sup_signal discreteprice_material -s 4 --name discreteprice_material_s4 --btcvae-B 4 --btcvae-M 20
+python main.py --sup_signal discreteprice_movement -s 4 --name discreteprice_movement_s4 --btcvae-B 12 --btcvae-M 20
+python main.py --sup_signal brand_circa -s 4 --name brand_circa_s4 --btcvae-B 48 --btcvae-M 5
+python main.py --sup_signal brand_material -s 4 --name brand_material_s4 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal brand_movement -s 4 --name brand_movement_s4 --btcvae-B 6 --btcvae-M 20
+python main.py --sup_signal circa_material -s 4 --name circa_material_s4 --btcvae-B 36 --btcvae-M 1
+python main.py --sup_signal circa_movement -s 4 --name circa_movement_s4 --btcvae-B 50 --btcvae-M 5
+python main.py --sup_signal material_movement -s 4 --name material_movement_s4 --btcvae-B 6 --btcvae-M 10
+python main.py --sup_signal discreteprice_brand_circa -s 4 --name discreteprice_brand_circa_s4 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_material -s 4 --name discreteprice_brand_material_s4 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_movement -s 4 --name discreteprice_brand_movement_s4 --btcvae-B 48 --btcvae-M 1
+python main.py --sup_signal discreteprice_circa_material -s 4 --name discreteprice_circa_material_s4 --btcvae-B 46 --btcvae-M 1
+python main.py --sup_signal discreteprice_circa_movement -s 4 --name discreteprice_circa_movement_s4 --btcvae-B 42 --btcvae-M 1
+python main.py --sup_signal discreteprice_material_movement -s 4 --name discreteprice_material_movement_s4 --btcvae-B 1 --btcvae-M 1
+python main.py --sup_signal brand_circa_material -s 4 --name brand_circa_material_s4 --btcvae-B 48 --btcvae-M 1
+python main.py --sup_signal brand_circa_movement -s 4 --name brand_circa_movement_s4 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal brand_material_movement -s 4 --name brand_material_movement_s4 --btcvae-B 40 --btcvae-M 1
+python main.py --sup_signal circa_material_movement -s 4 --name circa_material_movement_s4 --btcvae-B 48 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_circa_material -s 4 --name discreteprice_brand_circa_material_s4 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_circa_movement -s 4 --name discreteprice_brand_circa_movement_s4 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_material_movement -s 4 --name discreteprice_brand_material_movement_s4 --btcvae-B 44 --btcvae-M 1
+python main.py --sup_signal discreteprice_circa_material_movement -s 4 --name discreteprice_circa_material_movement_s4 --btcvae-B 44 --btcvae-M 1
+python main.py --sup_signal brand_circa_material_movement -s 4 --name brand_circa_material_movement_s4 --btcvae-B 44 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_circa_material_movement -s 4 --name discreteprice_brand_circa_material_movement_s4 --btcvae-B 44 --btcvae-M 1
+
+python main.py --sup_signal continuousprice -s 5 --name continuousprice_s5 --btcvae-B 1 --btcvae-M 16
+python main.py --sup_signal discreteprice -s 5 --name discreteprice_s5 --btcvae-B 22 --btcvae-M 45
+python main.py --sup_signal brand -s 5 --name brand_s5 --btcvae-B 18 --btcvae-M 50
+python main.py --sup_signal circa -s 5 --name circa_s5 --btcvae-B 4 --btcvae-M 35
+python main.py --sup_signal material -s 5 --name material_s5 --btcvae-B 6 --btcvae-M 25
+python main.py --sup_signal movement -s 5 --name movement_s5 --btcvae-B 4 --btcvae-M 20
+python main.py --sup_signal discreteprice_brand -s 5 --name discreteprice_brand_s5 --btcvae-B 6 --btcvae-M 25
+python main.py --sup_signal discreteprice_circa -s 5 --name discreteprice_circa_s5 --btcvae-B 4 --btcvae-M 18
+python main.py --sup_signal discreteprice_material -s 5 --name discreteprice_material_s5 --btcvae-B 4 --btcvae-M 20
+python main.py --sup_signal discreteprice_movement -s 5 --name discreteprice_movement_s5 --btcvae-B 12 --btcvae-M 20
+python main.py --sup_signal brand_circa -s 5 --name brand_circa_s5 --btcvae-B 48 --btcvae-M 5
+python main.py --sup_signal brand_material -s 5 --name brand_material_s5 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal brand_movement -s 5 --name brand_movement_s5 --btcvae-B 6 --btcvae-M 20
+python main.py --sup_signal circa_material -s 5 --name circa_material_s5 --btcvae-B 36 --btcvae-M 1
+python main.py --sup_signal circa_movement -s 5 --name circa_movement_s5 --btcvae-B 50 --btcvae-M 5
+python main.py --sup_signal material_movement -s 5 --name material_movement_s5 --btcvae-B 6 --btcvae-M 10
+python main.py --sup_signal discreteprice_brand_circa -s 5 --name discreteprice_brand_circa_s5 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_material -s 5 --name discreteprice_brand_material_s5 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_movement -s 5 --name discreteprice_brand_movement_s5 --btcvae-B 48 --btcvae-M 1
+python main.py --sup_signal discreteprice_circa_material -s 5 --name discreteprice_circa_material_s5 --btcvae-B 46 --btcvae-M 1
+python main.py --sup_signal discreteprice_circa_movement -s 5 --name discreteprice_circa_movement_s5 --btcvae-B 42 --btcvae-M 1
+python main.py --sup_signal discreteprice_material_movement -s 5 --name discreteprice_material_movement_s5 --btcvae-B 1 --btcvae-M 1
+python main.py --sup_signal brand_circa_material -s 5 --name brand_circa_material_s5 --btcvae-B 48 --btcvae-M 1
+python main.py --sup_signal brand_circa_movement -s 5 --name brand_circa_movement_s5 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal brand_material_movement -s 5 --name brand_material_movement_s5 --btcvae-B 40 --btcvae-M 1
+python main.py --sup_signal circa_material_movement -s 5 --name circa_material_movement_s5 --btcvae-B 48 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_circa_material -s 5 --name discreteprice_brand_circa_material_s5 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_circa_movement -s 5 --name discreteprice_brand_circa_movement_s5 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_material_movement -s 5 --name discreteprice_brand_material_movement_s5 --btcvae-B 44 --btcvae-M 1
+python main.py --sup_signal discreteprice_circa_material_movement -s 5 --name discreteprice_circa_material_movement_s5 --btcvae-B 44 --btcvae-M 1
+python main.py --sup_signal brand_circa_material_movement -s 5 --name brand_circa_material_movement_s5 --btcvae-B 44 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_circa_material_movement -s 5 --name discreteprice_brand_circa_material_movement_s5 --btcvae-B 44 --btcvae-M 1
+
+python main.py --sup_signal continuousprice -s 6 --name continuousprice_s6 --btcvae-B 1 --btcvae-M 16
+python main.py --sup_signal discreteprice -s 6 --name discreteprice_s6 --btcvae-B 22 --btcvae-M 45
+python main.py --sup_signal brand -s 6 --name brand_s6 --btcvae-B 18 --btcvae-M 50
+python main.py --sup_signal circa -s 6 --name circa_s6 --btcvae-B 4 --btcvae-M 35
+python main.py --sup_signal material -s 6 --name material_s6 --btcvae-B 6 --btcvae-M 25
+python main.py --sup_signal movement -s 6 --name movement_s6 --btcvae-B 4 --btcvae-M 20
+python main.py --sup_signal discreteprice_brand -s 6 --name discreteprice_brand_s6 --btcvae-B 6 --btcvae-M 25
+python main.py --sup_signal discreteprice_circa -s 6 --name discreteprice_circa_s6 --btcvae-B 4 --btcvae-M 18
+python main.py --sup_signal discreteprice_material -s 6 --name discreteprice_material_s6 --btcvae-B 4 --btcvae-M 20
+python main.py --sup_signal discreteprice_movement -s 6 --name discreteprice_movement_s6 --btcvae-B 12 --btcvae-M 20
+python main.py --sup_signal brand_circa -s 6 --name brand_circa_s6 --btcvae-B 48 --btcvae-M 5
+python main.py --sup_signal brand_material -s 6 --name brand_material_s6 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal brand_movement -s 6 --name brand_movement_s6 --btcvae-B 6 --btcvae-M 20
+python main.py --sup_signal circa_material -s 6 --name circa_material_s6 --btcvae-B 36 --btcvae-M 1
+python main.py --sup_signal circa_movement -s 6 --name circa_movement_s6 --btcvae-B 50 --btcvae-M 5
+python main.py --sup_signal material_movement -s 6 --name material_movement_s6 --btcvae-B 6 --btcvae-M 10
+python main.py --sup_signal discreteprice_brand_circa -s 6 --name discreteprice_brand_circa_s6 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_material -s 6 --name discreteprice_brand_material_s6 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_movement -s 6 --name discreteprice_brand_movement_s6 --btcvae-B 48 --btcvae-M 1
+python main.py --sup_signal discreteprice_circa_material -s 6 --name discreteprice_circa_material_s6 --btcvae-B 46 --btcvae-M 1
+python main.py --sup_signal discreteprice_circa_movement -s 6 --name discreteprice_circa_movement_s6 --btcvae-B 42 --btcvae-M 1
+python main.py --sup_signal discreteprice_material_movement -s 6 --name discreteprice_material_movement_s6 --btcvae-B 1 --btcvae-M 1
+python main.py --sup_signal brand_circa_material -s 6 --name brand_circa_material_s6 --btcvae-B 48 --btcvae-M 1
+python main.py --sup_signal brand_circa_movement -s 6 --name brand_circa_movement_s6 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal brand_material_movement -s 6 --name brand_material_movement_s6 --btcvae-B 40 --btcvae-M 1
+python main.py --sup_signal circa_material_movement -s 6 --name circa_material_movement_s6 --btcvae-B 48 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_circa_material -s 6 --name discreteprice_brand_circa_material_s6 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_circa_movement -s 6 --name discreteprice_brand_circa_movement_s6 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_material_movement -s 6 --name discreteprice_brand_material_movement_s6 --btcvae-B 44 --btcvae-M 1
+python main.py --sup_signal discreteprice_circa_material_movement -s 6 --name discreteprice_circa_material_movement_s6 --btcvae-B 44 --btcvae-M 1
+python main.py --sup_signal brand_circa_material_movement -s 6 --name brand_circa_material_movement_s6 --btcvae-B 44 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_circa_material_movement -s 6 --name discreteprice_brand_circa_material_movement_s6 --btcvae-B 44 --btcvae-M 1
+
+python main.py --sup_signal continuousprice -s 7 --name continuousprice_s7 --btcvae-B 1 --btcvae-M 16
+python main.py --sup_signal discreteprice -s 7 --name discreteprice_s7 --btcvae-B 22 --btcvae-M 45
+python main.py --sup_signal brand -s 7 --name brand_s7 --btcvae-B 18 --btcvae-M 50
+python main.py --sup_signal circa -s 7 --name circa_s7 --btcvae-B 4 --btcvae-M 35
+python main.py --sup_signal material -s 7 --name material_s7 --btcvae-B 6 --btcvae-M 25
+python main.py --sup_signal movement -s 7 --name movement_s7 --btcvae-B 4 --btcvae-M 20
+python main.py --sup_signal discreteprice_brand -s 7 --name discreteprice_brand_s7 --btcvae-B 6 --btcvae-M 25
+python main.py --sup_signal discreteprice_circa -s 7 --name discreteprice_circa_s7 --btcvae-B 4 --btcvae-M 18
+python main.py --sup_signal discreteprice_material -s 7 --name discreteprice_material_s7 --btcvae-B 4 --btcvae-M 20
+python main.py --sup_signal discreteprice_movement -s 7 --name discreteprice_movement_s7 --btcvae-B 12 --btcvae-M 20
+python main.py --sup_signal brand_circa -s 7 --name brand_circa_s7 --btcvae-B 48 --btcvae-M 5
+python main.py --sup_signal brand_material -s 7 --name brand_material_s7 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal brand_movement -s 7 --name brand_movement_s7 --btcvae-B 6 --btcvae-M 20
+python main.py --sup_signal circa_material -s 7 --name circa_material_s7 --btcvae-B 36 --btcvae-M 1
+python main.py --sup_signal circa_movement -s 7 --name circa_movement_s7 --btcvae-B 50 --btcvae-M 5
+python main.py --sup_signal material_movement -s 7 --name material_movement_s7 --btcvae-B 6 --btcvae-M 10
+python main.py --sup_signal discreteprice_brand_circa -s 7 --name discreteprice_brand_circa_s7 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_material -s 7 --name discreteprice_brand_material_s7 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_movement -s 7 --name discreteprice_brand_movement_s7 --btcvae-B 48 --btcvae-M 1
+python main.py --sup_signal discreteprice_circa_material -s 7 --name discreteprice_circa_material_s7 --btcvae-B 46 --btcvae-M 1
+python main.py --sup_signal discreteprice_circa_movement -s 7 --name discreteprice_circa_movement_s7 --btcvae-B 42 --btcvae-M 1
+python main.py --sup_signal discreteprice_material_movement -s 7 --name discreteprice_material_movement_s7 --btcvae-B 1 --btcvae-M 1
+python main.py --sup_signal brand_circa_material -s 7 --name brand_circa_material_s7 --btcvae-B 48 --btcvae-M 1
+python main.py --sup_signal brand_circa_movement -s 7 --name brand_circa_movement_s7 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal brand_material_movement -s 7 --name brand_material_movement_s7 --btcvae-B 40 --btcvae-M 1
+python main.py --sup_signal circa_material_movement -s 7 --name circa_material_movement_s7 --btcvae-B 48 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_circa_material -s 7 --name discreteprice_brand_circa_material_s7 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_circa_movement -s 7 --name discreteprice_brand_circa_movement_s7 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_material_movement -s 7 --name discreteprice_brand_material_movement_s7 --btcvae-B 44 --btcvae-M 1
+python main.py --sup_signal discreteprice_circa_material_movement -s 7 --name discreteprice_circa_material_movement_s7 --btcvae-B 44 --btcvae-M 1
+python main.py --sup_signal brand_circa_material_movement -s 7 --name brand_circa_material_movement_s7 --btcvae-B 44 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_circa_material_movement -s 7 --name discreteprice_brand_circa_material_movement_s7 --btcvae-B 44 --btcvae-M 1
+
+python main.py --sup_signal continuousprice -s 8 --name continuousprice_s8 --btcvae-B 1 --btcvae-M 16
+python main.py --sup_signal discreteprice -s 8 --name discreteprice_s8 --btcvae-B 22 --btcvae-M 45
+python main.py --sup_signal brand -s 8 --name brand_s8 --btcvae-B 18 --btcvae-M 50
+python main.py --sup_signal circa -s 8 --name circa_s8 --btcvae-B 4 --btcvae-M 35
+python main.py --sup_signal material -s 8 --name material_s8 --btcvae-B 6 --btcvae-M 25
+python main.py --sup_signal movement -s 8 --name movement_s8 --btcvae-B 4 --btcvae-M 20
+python main.py --sup_signal discreteprice_brand -s 8 --name discreteprice_brand_s8 --btcvae-B 6 --btcvae-M 25
+python main.py --sup_signal discreteprice_circa -s 8 --name discreteprice_circa_s8 --btcvae-B 4 --btcvae-M 18
+python main.py --sup_signal discreteprice_material -s 8 --name discreteprice_material_s8 --btcvae-B 4 --btcvae-M 20
+python main.py --sup_signal discreteprice_movement -s 8 --name discreteprice_movement_s8 --btcvae-B 12 --btcvae-M 20
+python main.py --sup_signal brand_circa -s 8 --name brand_circa_s8 --btcvae-B 48 --btcvae-M 5
+python main.py --sup_signal brand_material -s 8 --name brand_material_s8 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal brand_movement -s 8 --name brand_movement_s8 --btcvae-B 6 --btcvae-M 20
+python main.py --sup_signal circa_material -s 8 --name circa_material_s8 --btcvae-B 36 --btcvae-M 1
+python main.py --sup_signal circa_movement -s 8 --name circa_movement_s8 --btcvae-B 50 --btcvae-M 5
+python main.py --sup_signal material_movement -s 8 --name material_movement_s8 --btcvae-B 6 --btcvae-M 10
+python main.py --sup_signal discreteprice_brand_circa -s 8 --name discreteprice_brand_circa_s8 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_material -s 8 --name discreteprice_brand_material_s8 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_movement -s 8 --name discreteprice_brand_movement_s8 --btcvae-B 48 --btcvae-M 1
+python main.py --sup_signal discreteprice_circa_material -s 8 --name discreteprice_circa_material_s8 --btcvae-B 46 --btcvae-M 1
+python main.py --sup_signal discreteprice_circa_movement -s 8 --name discreteprice_circa_movement_s8 --btcvae-B 42 --btcvae-M 1
+python main.py --sup_signal discreteprice_material_movement -s 8 --name discreteprice_material_movement_s8 --btcvae-B 1 --btcvae-M 1
+python main.py --sup_signal brand_circa_material -s 8 --name brand_circa_material_s8 --btcvae-B 48 --btcvae-M 1
+python main.py --sup_signal brand_circa_movement -s 8 --name brand_circa_movement_s8 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal brand_material_movement -s 8 --name brand_material_movement_s8 --btcvae-B 40 --btcvae-M 1
+python main.py --sup_signal circa_material_movement -s 8 --name circa_material_movement_s8 --btcvae-B 48 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_circa_material -s 8 --name discreteprice_brand_circa_material_s8 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_circa_movement -s 8 --name discreteprice_brand_circa_movement_s8 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_material_movement -s 8 --name discreteprice_brand_material_movement_s8 --btcvae-B 44 --btcvae-M 1
+python main.py --sup_signal discreteprice_circa_material_movement -s 8 --name discreteprice_circa_material_movement_s8 --btcvae-B 44 --btcvae-M 1
+python main.py --sup_signal brand_circa_material_movement -s 8 --name brand_circa_material_movement_s8 --btcvae-B 44 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_circa_material_movement -s 8 --name discreteprice_brand_circa_material_movement_s8 --btcvae-B 44 --btcvae-M 1
+
+python main.py --sup_signal continuousprice -s 9 --name continuousprice_s9 --btcvae-B 1 --btcvae-M 16
+python main.py --sup_signal discreteprice -s 9 --name discreteprice_s9 --btcvae-B 22 --btcvae-M 45
+python main.py --sup_signal brand -s 9 --name brand_s9 --btcvae-B 18 --btcvae-M 50
+python main.py --sup_signal circa -s 9 --name circa_s9 --btcvae-B 4 --btcvae-M 35
+python main.py --sup_signal material -s 9 --name material_s9 --btcvae-B 6 --btcvae-M 25
+python main.py --sup_signal movement -s 9 --name movement_s9 --btcvae-B 4 --btcvae-M 20
+python main.py --sup_signal discreteprice_brand -s 9 --name discreteprice_brand_s9 --btcvae-B 6 --btcvae-M 25
+python main.py --sup_signal discreteprice_circa -s 9 --name discreteprice_circa_s9 --btcvae-B 4 --btcvae-M 18
+python main.py --sup_signal discreteprice_material -s 9 --name discreteprice_material_s9 --btcvae-B 4 --btcvae-M 20
+python main.py --sup_signal discreteprice_movement -s 9 --name discreteprice_movement_s9 --btcvae-B 12 --btcvae-M 20
+python main.py --sup_signal brand_circa -s 9 --name brand_circa_s9 --btcvae-B 48 --btcvae-M 5
+python main.py --sup_signal brand_material -s 9 --name brand_material_s9 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal brand_movement -s 9 --name brand_movement_s9 --btcvae-B 6 --btcvae-M 20
+python main.py --sup_signal circa_material -s 9 --name circa_material_s9 --btcvae-B 36 --btcvae-M 1
+python main.py --sup_signal circa_movement -s 9 --name circa_movement_s9 --btcvae-B 50 --btcvae-M 5
+python main.py --sup_signal material_movement -s 9 --name material_movement_s9 --btcvae-B 6 --btcvae-M 10
+python main.py --sup_signal discreteprice_brand_circa -s 9 --name discreteprice_brand_circa_s9 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_material -s 9 --name discreteprice_brand_material_s9 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_movement -s 9 --name discreteprice_brand_movement_s9 --btcvae-B 48 --btcvae-M 1
+python main.py --sup_signal discreteprice_circa_material -s 9 --name discreteprice_circa_material_s9 --btcvae-B 46 --btcvae-M 1
+python main.py --sup_signal discreteprice_circa_movement -s 9 --name discreteprice_circa_movement_s9 --btcvae-B 42 --btcvae-M 1
+python main.py --sup_signal discreteprice_material_movement -s 9 --name discreteprice_material_movement_s9 --btcvae-B 1 --btcvae-M 1
+python main.py --sup_signal brand_circa_material -s 9 --name brand_circa_material_s9 --btcvae-B 48 --btcvae-M 1
+python main.py --sup_signal brand_circa_movement -s 9 --name brand_circa_movement_s9 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal brand_material_movement -s 9 --name brand_material_movement_s9 --btcvae-B 40 --btcvae-M 1
+python main.py --sup_signal circa_material_movement -s 9 --name circa_material_movement_s9 --btcvae-B 48 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_circa_material -s 9 --name discreteprice_brand_circa_material_s9 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_circa_movement -s 9 --name discreteprice_brand_circa_movement_s9 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_material_movement -s 9 --name discreteprice_brand_material_movement_s9 --btcvae-B 44 --btcvae-M 1
+python main.py --sup_signal discreteprice_circa_material_movement -s 9 --name discreteprice_circa_material_movement_s9 --btcvae-B 44 --btcvae-M 1
+python main.py --sup_signal brand_circa_material_movement -s 9 --name brand_circa_material_movement_s9 --btcvae-B 44 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_circa_material_movement -s 9 --name discreteprice_brand_circa_material_movement_s9 --btcvae-B 44 --btcvae-M 1
+
+python main.py --sup_signal continuousprice -s 10 --name continuousprice_s10 --btcvae-B 1 --btcvae-M 16
+python main.py --sup_signal discreteprice -s 10 --name discreteprice_s10 --btcvae-B 22 --btcvae-M 45
+python main.py --sup_signal brand -s 10 --name brand_s10 --btcvae-B 18 --btcvae-M 50
+python main.py --sup_signal circa -s 10 --name circa_s10 --btcvae-B 4 --btcvae-M 35
+python main.py --sup_signal material -s 10 --name material_s10 --btcvae-B 6 --btcvae-M 25
+python main.py --sup_signal movement -s 10 --name movement_s10 --btcvae-B 4 --btcvae-M 20
+python main.py --sup_signal discreteprice_brand -s 10 --name discreteprice_brand_s10 --btcvae-B 6 --btcvae-M 25
+python main.py --sup_signal discreteprice_circa -s 10 --name discreteprice_circa_s10 --btcvae-B 4 --btcvae-M 18
+python main.py --sup_signal discreteprice_material -s 10 --name discreteprice_material_s10 --btcvae-B 4 --btcvae-M 20
+python main.py --sup_signal discreteprice_movement -s 10 --name discreteprice_movement_s10 --btcvae-B 12 --btcvae-M 20
+python main.py --sup_signal brand_circa -s 10 --name brand_circa_s10 --btcvae-B 48 --btcvae-M 5
+python main.py --sup_signal brand_material -s 10 --name brand_material_s10 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal brand_movement -s 10 --name brand_movement_s10 --btcvae-B 6 --btcvae-M 20
+python main.py --sup_signal circa_material -s 10 --name circa_material_s10 --btcvae-B 36 --btcvae-M 1
+python main.py --sup_signal circa_movement -s 10 --name circa_movement_s10 --btcvae-B 50 --btcvae-M 5
+python main.py --sup_signal material_movement -s 10 --name material_movement_s10 --btcvae-B 6 --btcvae-M 10
+python main.py --sup_signal discreteprice_brand_circa -s 10 --name discreteprice_brand_circa_s10 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_material -s 10 --name discreteprice_brand_material_s10 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_movement -s 10 --name discreteprice_brand_movement_s10 --btcvae-B 48 --btcvae-M 1
+python main.py --sup_signal discreteprice_circa_material -s 10 --name discreteprice_circa_material_s10 --btcvae-B 46 --btcvae-M 1
+python main.py --sup_signal discreteprice_circa_movement -s 10 --name discreteprice_circa_movement_s10 --btcvae-B 42 --btcvae-M 1
+python main.py --sup_signal discreteprice_material_movement -s 10 --name discreteprice_material_movement_s10 --btcvae-B 1 --btcvae-M 1
+python main.py --sup_signal brand_circa_material -s 10 --name brand_circa_material_s10 --btcvae-B 48 --btcvae-M 1
+python main.py --sup_signal brand_circa_movement -s 10 --name brand_circa_movement_s10 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal brand_material_movement -s 10 --name brand_material_movement_s10 --btcvae-B 40 --btcvae-M 1
+python main.py --sup_signal circa_material_movement -s 10 --name circa_material_movement_s10 --btcvae-B 48 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_circa_material -s 10 --name discreteprice_brand_circa_material_s10 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_circa_movement -s 10 --name discreteprice_brand_circa_movement_s10 --btcvae-B 50 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_material_movement -s 10 --name discreteprice_brand_material_movement_s10 --btcvae-B 44 --btcvae-M 1
+python main.py --sup_signal discreteprice_circa_material_movement -s 10 --name discreteprice_circa_material_movement_s10 --btcvae-B 44 --btcvae-M 1
+python main.py --sup_signal brand_circa_material_movement -s 10 --name brand_circa_material_movement_s10 --btcvae-B 44 --btcvae-M 1
+python main.py --sup_signal discreteprice_brand_circa_material_movement -s 10 --name discreteprice_brand_circa_material_movement_s10 --btcvae-B 44 --btcvae-M 1
+
+python main.py -s 1 --name unsupervised_s1 --btcvae-B 18 --btcvae-M 0
+python main.py -s 2 --name unsupervised_s2 --btcvae-B 18 --btcvae-M 0
+python main.py -s 3 --name unsupervised_s3 --btcvae-B 18 --btcvae-M 0
+python main.py -s 4 --name unsupervised_s4 --btcvae-B 18 --btcvae-M 0
+python main.py -s 5 --name unsupervised_s5 --btcvae-B 18 --btcvae-M 0
+python main.py -s 6 --name unsupervised_s6 --btcvae-B 18 --btcvae-M 0
+python main.py -s 7 --name unsupervised_s7 --btcvae-B 18 --btcvae-M 0
+python main.py -s 8 --name unsupervised_s8 --btcvae-B 18 --btcvae-M 0
+python main.py -s 9 --name unsupervised_s9 --btcvae-B 18 --btcvae-M 0
+python main.py -s 10 --name unsupervised_s10 --btcvae-B 18 --btcvae-M 0
+
+python main.py -s 1 --name vae_s1 --btcvae-B 1 --btcvae-M 0
+python main.py -s 2 --name vae_s2 --btcvae-B 1 --btcvae-M 0
+python main.py -s 3 --name vae_s3 --btcvae-B 1 --btcvae-M 0
+python main.py -s 4 --name vae_s4 --btcvae-B 1 --btcvae-M 0
+python main.py -s 5 --name vae_s5 --btcvae-B 1 --btcvae-M 0
+python main.py -s 6 --name vae_s6 --btcvae-B 1 --btcvae-M 0
+python main.py -s 7 --name vae_s7 --btcvae-B 1 --btcvae-M 0
+python main.py -s 8 --name vae_s8 --btcvae-B 1 --btcvae-M 0
+python main.py -s 9 --name vae_s9 --btcvae-B 1 --btcvae-M 0
+python main.py -s 10 --name vae_s10 --btcvae-B 1 --btcvae-M 0
+
+python main.py -s 1 --name ae_s1 --btcvae-A 0 --btcvae-B 0 --btcvae-G 0 --btcvae-M 0
+python main.py -s 2 --name ae_s2 --btcvae-A 0 --btcvae-B 0 --btcvae-G 0 --btcvae-M 0
+python main.py -s 3 --name ae_s3 --btcvae-A 0 --btcvae-B 0 --btcvae-G 0 --btcvae-M 0
+python main.py -s 4 --name ae_s4 --btcvae-A 0 --btcvae-B 0 --btcvae-G 0 --btcvae-M 0
+python main.py -s 5 --name ae_s5 --btcvae-A 0 --btcvae-B 0 --btcvae-G 0 --btcvae-M 0
+python main.py -s 6 --name ae_s6 --btcvae-A 0 --btcvae-B 0 --btcvae-G 0 --btcvae-M 0
+python main.py -s 7 --name ae_s7 --btcvae-A 0 --btcvae-B 0 --btcvae-G 0 --btcvae-M 0
+python main.py -s 8 --name ae_s8 --btcvae-A 0 --btcvae-B 0 --btcvae-G 0 --btcvae-M 0
+python main.py -s 9 --name ae_s9 --btcvae-A 0 --btcvae-B 0 --btcvae-G 0 --btcvae-M 0
+python main.py -s 10 --name ae_s10 --btcvae-A 0 --btcvae-B 0 --btcvae-G 0 --btcvae-M 0
