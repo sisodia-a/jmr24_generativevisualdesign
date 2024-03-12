@@ -341,7 +341,7 @@ class Visualizer():
         """
         n_latents = n_latents if n_latents is not None else self.model.latent_dim
 
-        for i in range(10):
+        for i in range(500):
             traversals = self.traversals(data=data[i:i+1, ...] if is_posterior else None,is_reorder_latents=True,n_per_latent=n_per_latent,n_latents=n_latents,is_force_return=True)
             traversals = Image.fromarray(traversals)
             if is_show_text:
