@@ -31,9 +31,11 @@ To download the dataset, please use the following links. Copy these files to ‘
 
 * #### [Watches Dataset](https://www.dropbox.com/scl/fo/akj3w8pat0lg1fa4ax480/h?rlkey=5d4ykq5br3kzkwarhi4ld4na8&dl=0)
 
-<p align="center"><img src="./figure_pdfs/fig3.pdf" alt="model_training" style="display: block; margin-left: auto; margin-right: auto; width: 100%; text-align: center;" > </p>
+## Replication Steps
 
-#### Run
+#### Step 1
+
+Go to './hyperparameter_selection' and run disentanglement model with a unique $\beta$, $\delta$, and supervisory signal combination with 10 different seeds.
 
 Use `python main.py <param-name> <param-value>`. For example:
 
