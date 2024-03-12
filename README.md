@@ -31,6 +31,8 @@ To download the dataset, please use the following links. Copy these files to ‘
 
 * #### [Watches Dataset](https://www.dropbox.com/scl/fo/akj3w8pat0lg1fa4ax480/h?rlkey=5d4ykq5br3kzkwarhi4ld4na8&dl=0)
 
+<p align="center"><img src="./figure_pdfs/fig3.pdf" alt="disentanglement_example" style="display: block; margin-left: auto; margin-right: auto; width: 100%; text-align: center;" > </p>
+
 #### Run
 
 Use `python main.py <param-name> <param-value>`. For example:
