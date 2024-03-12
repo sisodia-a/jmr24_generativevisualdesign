@@ -14,7 +14,7 @@ from configparser import ConfigParser
 
 from torch import optim
 
-from models.vae import VAE, Encoder, Decoder, Encoder_VGG, Decoder_VGG
+from models.vae import VAE, Encoder, Decoder
 from models.regression import WTPregression
 from training.training import Trainer
 from training.evaluate import Evaluator
