@@ -19,7 +19,7 @@ Sisodia, A, Burnap, A, and Kumar, V (2024). Generative Interpretable Visual Desi
   publisher={XXX}
 }
 ```
-This code will reproduce Figures (5, 6, 10, 12, G.1, G.2) and Tables (2, 6, 7, D.1, E.1, F.1). Some of the other figures (1, 2, 3, 4) from the paper are at './figure_pdfs'. 
+This code will reproduce Figures (5, 6, 10, 12, G.1, G.2) and Tables (2, 6, 7, D.1, E.1, F.1).
 
 ## Installation
 #### Libraries
@@ -224,11 +224,6 @@ Note that generating the ideal point design requires inputting the "ideal point"
 
 ./post_model_search/main.py: main python execution file 
 ./post_model_search/main_viz.py: main python execution file to generate images for conjoint analysis
-
-./figure_pdfs/fig1.pdf: Figure 1 of the Paper
-./figure_pdfs/fig2.pdf: Figure 2 of the Paper
-./figure_pdfs/fig3.pdf: Figure 3 of the Paper
-./figure_pdfs/fig4.pdf: Figure 4 of the Paper
 
 ## Computing Resources
 
