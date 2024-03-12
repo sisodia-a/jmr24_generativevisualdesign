@@ -19,6 +19,7 @@ Sisodia, A, Burnap, A, and Kumar, V (2024). Generative Interpretable Visual Desi
   publisher={XXX}
 }
 ```
+This code will reproduce Figures (5, 6, 10, 12, G.1, G.2) and Tables (2, 6, 7, D.1, E.1, F.1). Some of the other figures (1, 2, 3, 4) from the paper are at './figure_pdfs'. 
 
 ## Installation
 #### Libraries
@@ -98,7 +99,7 @@ Select the value of $\beta$ and $\delta$ for each supervisory signal at which th
 
 Go to './post_model_search' and run disentanglement model at the optimal $\beta$ and $\delta$ for each supervisory signal combination at 10 different seeds. 
 
-For the watch dataset, execute the commands listed in execute_step2.txt to use the values listed in the paper. For example, see the first line of this file:
+For the watch dataset, execute the commands listed in execute_step2.txt to use the values listed in the paper. For example, see the first command in the file 'execute_step2.txt':
 
 ```
 python main.py --sup_signal continuousprice -s 1 --name continuousprice_s1 --btcvae-B 1 --btcvae-M 16 
@@ -117,17 +118,17 @@ The above command will create a directory `results/<model-name>/` which will con
 * **mean_params_test2.csv**: mean visual characteristics of all watches in the test2 dataset. 
 * **mean_params_train.csv**: mean visual characteristics of all watches in the train dataset. 
 
-Select the value of $\beta$ and $\delta$ for each supervisory signal at which the average supervised loss across 10 seeds on a validation dataset is lowest. The supervised loss on the test set is stored as 'sup_loss_test' in the json file with the name ending in test_losses.log in the directory `results/<model-name>/` for each combination of seed, $\beta$, $\delta$, and the supervisory signal
+Copy the files stored in ‘results/<model-name>/‘ directory with the filename ending in ‘mean_params_test2.csv’ to the ‘calculate_udr’ folder.
 
 #### Step 3
 
-Copy the files stored in ‘results/<model-name>/‘ directory with the filename ending in ‘mean_params_test2.csv’ to the ‘calculate_udr’ folder. Switch to an R environment and calculate UDR for each supervisory signal using the below command.
+Go to './calculate_udr' to compare the UDRs for different supervisory signals. Switch to an R environment and execute the Rscript udr_calculation.R with the supervisory signal as the argument. For example:
 
 ```
 Rscript udr_calculation.R --sup_signal='brand'
 ```
 
-
+The results will be appended to filenamed udr.log. It will replicate results in Table F.1 of the paper.
 
 #### Conjoint Analysis and "Ideal Point'' Generative Design 
 
