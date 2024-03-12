@@ -19,7 +19,7 @@ Sisodia, A, Burnap, A, and Kumar, V (2024). Generative Interpretable Visual Desi
   publisher={XXX}
 }
 ```
-This code will reproduce Figures (5, 6, 10, 12, G.1, G.2) and Tables (2, 6, 7, D.1, E.1, F.1).
+This code will reproduce Figures (5, 6, 10, 12, G.1, G.2) and Tables (2, 6, 7, D.1, E.1, F.1) of the paper.
 
 ## Installation
 #### Libraries
