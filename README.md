@@ -120,6 +120,16 @@ The above command will create a directory `results/<model-name>/` which will con
 
 Copy the files stored in ‘results/<model-name>/‘ directory with the filename ending in ‘mean_params_test2.csv’ to the ‘calculate_udr’ folder.
 
+Execute the following commands to produce Figure 5, G.1 and G.2 of the paper.
+
+```
+python main_viz.py --name brand_circa_movement_s10
+python main_viz.py --name circa_s10
+python main_viz.py --name unsupervised_s10
+python main_viz.py --name vae_s10
+python main_viz.py --name ae_s10
+```
+
 #### Step 3: UDR Calculation
 
 Go to './calculate_udr' to compare the UDRs for different supervisory signals. Switch to an R environment and execute the Rscript udr_calculation.R with the supervisory signal as the argument. For example:
