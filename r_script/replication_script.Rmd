@@ -1,0 +1,192 @@
+---
+title: "Replication Script for Figures & Tables"
+author: "Ankit Sisodia"
+date: "Mar 2024"
+output:
+  html_document: default
+  pdf_document: default
+  word_document: default
+mainfont: "Times New Roman"
+---
+
+## Reading Data
+
+```{r}
+rm(list=ls())
+
+library(dplyr)
+library(stringr)
+library(ggplot2)
+opts <- options(ggplot2.continuous.colour="viridis")
+library(ggcorrplot)
+library(cowplot)
+library(stargazer)
+# library(broom)
+library(caret)
+library(RColorBrewer)
+library(philentropy)
+library(tidyr)
+library(readr)
+library(Hmisc)
+library(xtable)
+
+```
+
+
+```{r}
+
+preprocessed_data <- read.csv("preprocessed_structured_data.csv")
+preprocessed_data$timetrend <- preprocessed_data$timetrend - 3404
+preprocessed_data <- preprocessed_data  %>% filter(Year>=2010)
+preprocessed_data <- preprocessed_data %>% filter(file_name!="15363-83-0.jpg" & file_name!="16375-114-0.jpg" & file_name!="16375-189-0.jpg" & file_name!="17563-78-0.jpg" & file_name!="17566-118-0.jpg" & file_name!="22642-230-0.jpg" & file_name!="22805-1-0.jpg" & file_name!="22805-3-0.jpg" & file_name!="22805-6-0.jpg" & file_name!="22805-7-0.jpg" & file_name!="22807-139-0.jpg" & file_name!="23102-178-0.jpg" & file_name!="23754-3529-0.jpg" & file_name!="23886-4762-0.jpg" & file_name!="23896-2661-0.jpg" & file_name!="24307-2644-0.jpg" & file_name!="24307-2645-0.jpg" & file_name!="24319-2341-0.jpg" & file_name!="24319-2644-0.jpg" & file_name!="24771-2505-0.jpg" & file_name!="24775-2489-0.jpg" & file_name!="24775-2649-0.jpg" & file_name!="25020-19-0.jpg" & file_name!="25628-2417-0.jpg" & file_name!="25628-2589-0.jpg" & file_name!="25628-2644-0.jpg" & file_name!="26310-2426-0.jpg" & file_name!="27677-2243-0.jpg" & file_name!="27677-2405-0.jpg")
+preprocessed_data <- preprocessed_data %>% filter(location!="Amsterdam" & location!="London")
+preprocessed_data <- preprocessed_data %>% filter(real_wtp >= 1000)
+
+preprocessed_data$Year <- as.factor(preprocessed_data$Year)
+preprocessed_data$location <- as.factor(preprocessed_data$location)
+preprocessed_data$brand_name <- as.factor(preprocessed_data$brand_name)
+preprocessed_data$circa_range <- as.factor(preprocessed_data$circa_range)
+preprocessed_data$movement <- as.factor(preprocessed_data$movement)
+preprocessed_data$case_material <- as.factor(preprocessed_data$case_material)
+
+preprocessed_data <- within(preprocessed_data, brand_name <- relevel(brand_name, ref = "Others"))
+preprocessed_data <- within(preprocessed_data, circa_range <- relevel(circa_range, ref = "Pre_1950"))
+preprocessed_data <- within(preprocessed_data, movement <- relevel(movement, ref = "Quartz"))
+preprocessed_data <- within(preprocessed_data, location <- relevel(location, ref = "Online"))
+preprocessed_data <- within(preprocessed_data, Year <- relevel(Year, ref = "2010"))
+preprocessed_data <- within(preprocessed_data, case_material <- relevel(case_material, ref = "Others"))
+
+```
+
+```{r}
+model_name <- "brand_circa_movement_s10_"
+```
+
+```{r}
+
+train_losses <- read.csv(paste0("train_losses.csv")) %>% filter(Epoch==99 & grepl("kl_loss_training_",Loss))
+train_losses[order(train_losses$Value,decreasing = TRUE),]
+
+```
+
+
+```{r}
+
+assign_columns <- function(df,viz) {
+  colnames(df)[viz[1]] <- c("Dial_Size")
+  colnames(df)[viz[2]] <- c("Dial_Color")
+  colnames(df)[viz[3]] <- c("Strap_Color")
+  colnames(df)[viz[4]] <- c("Rim_Color")
+  colnames(df)[viz[5]] <- c("Dial_Shape")
+  colnames(df)[viz[6]] <- c("Knob_Size")
+  return(df)
+}
+
+select_visual_columns <- function(df) {
+  df <- df[,c("Dial_Size","Dial_Color","Strap_Color","Rim_Color","Dial_Shape","Knob_Size")]
+  return(df)
+}
+
+hist_fn <- function(file,i){
+  ggplot(file, aes(x = file[,i])) +  geom_density(alpha = 0.2) + theme_bw(base_size=10) + theme(legend.position="none", panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black")) + xlab(colnames(file)[i]) + ylab("Density")
+}
+
+```
+
+
+```{r}
+
+train_file <- read.csv(paste0(model_name,"filename_train.csv"),header = FALSE)
+validation_file <- read.csv(paste0(model_name,"filename_test1.csv"),header = FALSE)
+test_file <- read.csv(paste0(model_name,"filename_test2.csv"),header = FALSE)
+filename <- rbind(train_file,validation_file,test_file)
+colnames(filename) <- "file_name"
+
+train_visual_attributes <- read.csv(paste0(model_name,"mean_params_train.csv"),header=FALSE)
+validation_visual_attributes <- read.csv(paste0(model_name,"mean_params_test1.csv"),header=FALSE)
+test_visual_attributes <- read.csv(paste0(model_name,"mean_params_test2.csv"),header=FALSE)
+
+viz <- c(1,19,11,10,18,4)
+
+train_visual_attributes <- assign_columns(train_visual_attributes,viz)
+validation_visual_attributes <- assign_columns(validation_visual_attributes,viz)
+test_visual_attributes <- assign_columns(test_visual_attributes,viz)
+
+train_visual_attributes <- select_visual_columns(train_visual_attributes)
+validation_visual_attributes <- select_visual_columns(validation_visual_attributes)
+test_visual_attributes <- select_visual_columns(test_visual_attributes)
+
+file <- rbind(train_visual_attributes,validation_visual_attributes,test_visual_attributes)
+hist_file <- file
+colnames(hist_file) <- c("Dial Size","Dial Color","Strap Color","Rim Color","Dial Shape","Knob Size")
+
+theme_set(theme_bw(base_size=8) + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()))
+
+viz1 <- hist_fn(hist_file,1)
+viz2 <- hist_fn(hist_file,2)
+viz3 <- hist_fn(hist_file,3)
+viz4 <- hist_fn(hist_file,4)
+viz5 <- hist_fn(hist_file,5)
+viz6 <- hist_fn(hist_file,6)
+
+file <- cbind(filename,file)
+preprocessed_data <- merge(preprocessed_data,file)
+
+vars1 <- c("Dial_Size", "Dial_Color", "Strap_Color", "Rim_Color", "Dial_Shape", "Knob_Size")
+cor1 <- rcorr(as.matrix(preprocessed_data[vars1]), type = "pearson")
+latex_table1 <- xtable(cor1$r, caption = "Correlations for Dial_Size, Dial_Color, Strap_Color, Rim_Color, Dial_Shape, and Knob_Size")
+
+## Table 2
+print(latex_table1)
+
+## Figure 6
+print(plot_grid(viz1,viz2,viz3,viz4,viz5,viz6))
+
+## Table E.1
+stargazer(hist_file,header=FALSE,type='latex',digits=2,font.size = "footnotesize",label = "summary_visual", title = "Summary Statistics of Discovered Visual Attributes")
+
+summary_stats <- preprocessed_data %>% select(uniqueid,brand_name,Year,location,real_wtp,circa_range,movement,case_diameter,case_material,timetrend)
+summary_stats$isBrand_AP <- ifelse(summary_stats$brand_name=="Audemars_Piguet",1,0)
+summary_stats$isBrand_Cartier <- ifelse(summary_stats$brand_name=="Cartier",1,0)
+summary_stats$isBrand_PP <- ifelse(summary_stats$brand_name=="Patek_Philippe",1,0)
+summary_stats$isBrand_Rolex <- ifelse(summary_stats$brand_name=="Rolex",1,0)
+summary_stats$isBrand_Other <- ifelse(summary_stats$brand_name=="Others",1,0)
+summary_stats$brand_name <- NULL
+  
+summary_stats$Year <- as.numeric(summary_stats$Year)
+# summary_stats$isLocation_AMS <- ifelse(summary_stats$location=="Amsterdam",1,0)
+summary_stats$isLocation_DBX <- ifelse(summary_stats$location=="Dubai",1,0)
+summary_stats$isLocation_HK <- ifelse(summary_stats$location=="Hong_Kong",1,0)
+# summary_stats$isLocation_LON <- ifelse(summary_stats$location=="London",1,0)
+summary_stats$isLocation_NYC <- ifelse(summary_stats$location=="New_York",1,0)
+summary_stats$isLocation_ON <- ifelse(summary_stats$location=="Online",1,0)
+summary_stats$location <- NULL
+
+summary_stats$isMovement_Auto <- ifelse(summary_stats$movement=="Automatic",1,0)
+summary_stats$isMovement_Mech <- ifelse(summary_stats$movement=="Mechanical",1,0)
+summary_stats$isMovement_Quartz <- ifelse(summary_stats$movement=="Quartz",1,0)
+summary_stats$movement <- NULL  
+  
+summary_stats$isCirca_Pre1950 <- ifelse(summary_stats$circa_range=="Pre_1950",1,0)
+summary_stats$isCirca_1950s <- ifelse(summary_stats$circa_range=="1950s",1,0)
+summary_stats$isCirca_1960s <- ifelse(summary_stats$circa_range=="1960s",1,0)
+summary_stats$isCirca_1970s <- ifelse(summary_stats$circa_range=="1970s",1,0)
+summary_stats$isCirca_1980s <- ifelse(summary_stats$circa_range=="1980s",1,0)
+summary_stats$isCirca_1990s <- ifelse(summary_stats$circa_range=="1990s",1,0)
+summary_stats$isCirca_2000s <- ifelse(summary_stats$circa_range=="2000s",1,0)
+summary_stats$isCirca_2010s <- ifelse(summary_stats$circa_range=="2010s",1,0)
+summary_stats$circa_range <- NULL  
+
+summary_stats$is_Gold <- ifelse(summary_stats$case_material=="Gold",1,0)
+summary_stats$is_GoldSteel <- ifelse(summary_stats$case_material=="Gold and Steel",1,0)
+summary_stats$is_Steel <- ifelse(summary_stats$case_material=="Steel",1,0)
+summary_stats$is_OtherMaterial <- ifelse(summary_stats$case_material=="Others",1,0)
+summary_stats$case_material <- NULL
+summary_stats$uniqueid <- NULL
+summary_stats <- summary_stats %>% select(Year,isLocation_DBX,isLocation_HK,isLocation_NYC,isLocation_ON,isBrand_AP,isBrand_Cartier,isBrand_PP,isBrand_Rolex,isBrand_Other,isCirca_Pre1950,isCirca_1950s,isCirca_1960s,isCirca_1970s,isCirca_1980s,isCirca_1990s,isCirca_2000s,isCirca_2010s,isMovement_Auto,isMovement_Mech,isMovement_Quartz,case_diameter,is_Gold,is_GoldSteel,is_Steel,is_OtherMaterial,timetrend,real_wtp)
+summary_stats$real_wtp <- summary_stats$real_wtp/1000
+colnames(summary_stats) <- c("Auction Year","Location (Dubai)","Location (Hong Kong)","Location (New York City)","Location (Online)","Brand (Audemar's Piguet)","Brand (Cartier)","Brand (Patek Philippe)","Brand (Rolex)","Brand (Others)","Circa (Pre-1950s)","Circa (1950s)","Circa (1960s)","Circa (1970s)","Circa (1980s)","Circa (1990s)","Circa (2000s)","Circa (2010s)","Movement (Automatic)","Movement (Mechanical)","Movement (Quartz)","Watch Dimensions (in mm)","Material (Gold)","Material (Gold and Steel)","Material (Steel)","Material (Others)","Timetrend (in days)","Hammer Price (in $000s)")
+## Table D.1
+stargazer(summary_stats,header=FALSE,type='latex',digits=2,font.size = "footnotesize",label = "summary_stats", title = "Summary Statistics of Auctioned Watches")
+
+```
