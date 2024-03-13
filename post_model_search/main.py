@@ -108,27 +108,6 @@ def main(args):
     evaluator = Evaluator(model, loss_f,device=device,logger=logger,save_dir=exp_dir,experiment_name=args.name,model_type=args.model_type,is_progress_bar=not default_config['no_progress_bar'],file_type="test2")
     evaluator(test2_loader)
 
-    ## Visualizer
-    meta_data = load_metadata(model_dir)
-    model = load_model(model_dir, model_type=args.model_type,threshold_val=args.threshold_val,sup_signal=args.sup_signal)
-    model.eval()  # don't sample from latent: use mean
-    dataset = "watches"
-    viz = Visualizer(model=model,
-                     model_dir=model_dir,
-                     experiment_name=args.name,
-                     dataset=dataset,
-                     max_traversal=int(default_config['max_traversal']),
-                     loss_of_interest='kl_loss_training_',
-                     upsample_factor=int(default_config['upsample_factor']))
-    size = (int(default_config['n_rows']), int(default_config['n_cols']))
-    # same samples for all plots: sample max then take first `x`data  for all plots
-    num_samples = int(default_config['n_cols']) * int(default_config['n_rows'])
-    samples = get_samples(train_loader_batch1, num_samples, idcs=default_config['idcs'])
-    viz.generate_samples(size=size)
-    viz.data_samples(samples)
-    viz.traversals(data=samples[0:1, ...] if default_config['is_posterior'] else None,n_per_latent=int(default_config['n_cols'])*2,n_latents=int(default_config['n_rows']),is_reorder_latents=True)
-    viz.reconstruct_traverse(samples,is_posterior=default_config['is_posterior'],n_latents=int(default_config['n_rows']),n_per_latent=int(default_config['n_cols'])*2,is_show_text=default_config['is_show_loss'])
-
 if __name__ == '__main__':
     args = parse_arguments(sys.argv[1:])
     main(args)

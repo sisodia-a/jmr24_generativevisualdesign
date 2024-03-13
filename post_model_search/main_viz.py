@@ -83,10 +83,11 @@ def main(args):
     num_samples = int(default_config['n_cols']) * int(default_config['n_rows'])
     samples = get_samples(train_loader_batch1, num_samples, idcs=default_config['idcs'])
 
+    print("CLAUDE")
     viz.generate_samples(size=size)
     viz.data_samples(samples)
-    viz.traversals(data=samples[0:1, ...] if default_config['is_posterior'] else None,n_per_latent=int(default_config['n_cols'])*2,n_latents=int(default_config['n_rows']),is_reorder_latents=True)
-    viz.reconstruct_traverse(samples,is_posterior=default_config['is_posterior'],n_latents=int(default_config['n_rows']),n_per_latent=int(default_config['n_cols'])*2,is_show_text=default_config['is_show_loss'])
+    viz.traversals(data=samples[89:90, ...] if default_config['is_posterior'] else None,n_per_latent=int(default_config['n_cols'])*2,n_latents=int(default_config['n_rows']),is_reorder_latents=True)
+    # viz.reconstruct_traverse(samples,is_posterior=default_config['is_posterior'],n_latents=int(default_config['n_rows']),n_per_latent=int(default_config['n_cols'])*2,is_show_text=default_config['is_show_loss'])
     viz.save_cbc_images()
 
 if __name__ == '__main__':
