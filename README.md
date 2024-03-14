@@ -175,9 +175,9 @@ Note that generating the ideal point design requires inputting the "ideal point"
 ./README.md: README file
 ./disentanglement_env.yml: Environment File
 
-
-./calculate_udr/calc_udr.csv: Sample Output of udr_calculation.R
+./calculate_udr/udr.log: Sample Output of udr_calculation.R
 ./calculate_udr/udr_calculation.R: Script to Calculate UDR
+./calculate_udr/*mean_params_test2.csv: mean visual characteristics of all watches in the test2 dataset. 
 
 ./conjoint_analysis_and_ideal_point_design/conjoint_analysis_benchmark_models/data_generated.py: Data Generation for Conjoint
 ./conjoint_analysis_and_ideal_point_design/conjoint_analysis_benchmark_models/models.py: Prediction Models
