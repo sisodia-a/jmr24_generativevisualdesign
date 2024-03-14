@@ -341,16 +341,16 @@ class Visualizer():
         """
         n_latents = n_latents if n_latents is not None else self.model.latent_dim
 
-        for i in range(500):
-            traversals = self.traversals(data=data[i:i+1, ...] if is_posterior else None,is_reorder_latents=True,n_per_latent=n_per_latent,n_latents=n_latents,is_force_return=True)
-            traversals = Image.fromarray(traversals)
-            if is_show_text:
-                losses = sorted(self.losses, reverse=True)[:n_latents]
-                labels = ["KL={:.4f}".format(l) for l in losses]
-                traversals = add_labels(traversals, labels)
-       
-                filename = os.path.join(self.model_dir, self.experiment_name + '_' + str(i) + '_' + PLOT_NAMES["reconstruct_traverse"])
-                traversals.save(filename)
+        i = 89
+        traversals = self.traversals(data=data[i:i+1, ...] if is_posterior else None,is_reorder_latents=True,n_per_latent=n_per_latent,n_latents=n_latents,is_force_return=True)
+        traversals = Image.fromarray(traversals)
+        if is_show_text:
+            losses = sorted(self.losses, reverse=True)[:n_latents]
+            labels = ["KL={:.4f}".format(l) for l in losses]
+            traversals = add_labels(traversals, labels)
+
+            filename = os.path.join(self.model_dir, self.experiment_name + '_' + PLOT_NAMES["reconstruct_traverse"])
+            traversals.save(filename)
 
     def gif_traversals(self, data, n_latents=None, n_per_gif=15):
         """Generates a grid of gifs of latent posterior traversals where the rows
@@ -394,4 +394,4 @@ class Visualizer():
     def save_cbc_images(self):
         torch.cuda.empty_cache()
 
-        save_image(self.model.decoder(torch.tensor([[ 0.6548607,0,-0.3806326,0,0.0388163,0.0423271,-0.3785287,0, 0.3483999,0,0,0,0, 1.0565847,-0.7488752,0,-0.07339889, -0.2127654,0,0.03647424]]).to(self.device)).cpu(),self.experiment_name + 'sc_-0.75_dl_1.06_dz_0.65_rc_-0.21_ds_-0.38_kz_0.35.jpg')
+        #  save_image(self.model.decoder(torch.tensor([[ 0.6548607,0,-0.3806326,0,0.0388163,0.0423271,-0.3785287,0, 0.3483999,0,0,0,0, 1.0565847,-0.7488752,0,-0.07339889, -0.2127654,0,0.03647424]]).to(self.device)).cpu(),self.experiment_name + 'sc_-0.75_dl_1.06_dz_0.65_rc_-0.21_ds_-0.38_kz_0.35.jpg')
