@@ -82,10 +82,10 @@ discreteprice_brand_circa_material_movement
 
 The above command will create a directory `results/<model-name>/` which will contain:
 
+* **model.pt**: The model at the end of training.
 * **specs.json**: The parameters used to run the program (default and modified with CLI).
 * **train_losses.csv**: All (sub-)losses computed during training on the train and validation dataset.
 * **test_losses.log**: All (sub-)losses computed at the end of training on the test1 and test2 dataset. 
-* **reconstruct_traverse.png**: latent traversals of latent dimensions. 
 * **filename_test1.csv**: filenames of all watches in the test1 dataset. 
 * **filename_test2.csv**: filenames of all watches in the test2 dataset. 
 * **filename_train.csv**: filenames of all watches in the train dataset. 
