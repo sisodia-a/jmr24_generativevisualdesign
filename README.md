@@ -28,7 +28,7 @@ This codebase was built using the Pytorch neural net framework.  However, it als
     conda env create -f disentanglement_env.yml
 
 #### Data
-To download the dataset, please use the following links. Copy these files to ‘./hyperparameter_selection/data/watches/‘ and ‘./post_model_search/data/watches/‘ directories.
+To download the dataset, please use the following links. Copy these files to `./hyperparameter_selection/data/watches/` and `./post_model_search/data/watches/` directories.
 
 * #### [Watches Dataset](https://www.dropbox.com/scl/fo/akj3w8pat0lg1fa4ax480/h?rlkey=5d4ykq5br3kzkwarhi4ld4na8&dl=0)
 
