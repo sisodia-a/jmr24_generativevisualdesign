@@ -105,7 +105,7 @@ For the watch dataset, execute the commands listed in execute_step2.txt to use t
 python main.py --sup_signal continuousprice -s 1 --name continuousprice_s1 --btcvae-B 1 --btcvae-M 16 
 ```
 
-The above command will create a directory `results/<model-name>/` which will contain:
+The above command will create a directory `results/continuousprice_s1/` which will contain:
 
 * **specs.json**: The parameters used to run the program (default and modified with CLI).
 * **train_losses.csv**: All (sub-)losses computed during training on the train and validation dataset.
