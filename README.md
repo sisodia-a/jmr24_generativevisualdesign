@@ -38,7 +38,7 @@ To download the dataset, please use the following links. Copy these files to `./
 
 Go to `./hyperparameter_selection` and run disentanglement model with a unique $\beta$, $\delta$, and supervisory signal combination with 10 different seeds. Vary $\beta$, $\delta$, and supervisory signal combination.
 
-For example, in the below command, the seed is set to 1, $\beta$=18, $\delta$=50, and the supervisory signal is brand. The model name is brand_s1. 
+For example, in the below command, the seed is set to 1, $\beta$=18, $\delta$=50, and the supervisory signal is brand. The model name is `brand_s1`. 
 
 ```
 python main.py --sup_signal brand -s 1 --name brand_s1 --btcvae-B 18 --btcvae-M 50
