@@ -172,6 +172,7 @@ Note that generating the ideal point design requires inputting the "ideal point"
 
 ## List of Files
 
+```
 ./README.md: README file
 ./disentanglement_env.yml: Environment File
 
@@ -260,6 +261,7 @@ Note that generating the ideal point design requires inputting the "ideal point"
 
 ./post_model_search/main.py: main python execution file
 ./post_model_search/main_viz.py: main python execution file to generate images for conjoint analysis
+```
 
 ## Computing Resources
 
