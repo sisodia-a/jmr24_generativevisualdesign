@@ -118,8 +118,6 @@ The above command will create a directory `results/brand_circa_movement_s10/` wh
 * **brand_circa_movement_s10_mean_params_test2.csv**: mean visual characteristics of all watches in the test2 dataset. 
 * **brand_circa_movement_s10_mean_params_train.csv**: mean visual characteristics of all watches in the train dataset. 
 
-Execute the following commands to produce Figure 5, G.1 and G.2 of the paper.
-
 ```
 python main_viz.py --name brand_circa_movement_s10
 ```
