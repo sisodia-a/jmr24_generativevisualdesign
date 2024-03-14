@@ -144,23 +144,23 @@ The above command will create **vae_s10_posterior_traversals.png**: (Figure G2b)
 
 Copy the files stored in `results/<model_name>/` directory with the filename ending in `mean_params_test2.csv` to the `calculate_udr` folder. 
 
-Go to `./calculate_udr` to compare the UDRs for different supervisory signals. Switch to an R environment and execute the Rscript udr_calculation.R with the supervisory signal as the argument. For example:
+Go to `./calculate_udr` to compare the UDRs for different supervisory signals. Switch to an R environment and execute the Rscript `udr_calculation.R` with the supervisory signal as the argument. For example:
 
 ```
 Rscript udr_calculation.R --sup_signal='brand'
 ```
 
-The results will be appended to filenamed udr.log. It will replicate results in Table F.1 of the paper.
+The results will be appended to `filenamed udr.log`. It will replicate results in Table F.1 of the paper.
 
 #### Step 4: Helper Script
 
-Go to './r_script'. Switch to an R environment and execute the Rscript replication_script.Rmd to produce Table 2, D.1, E.1 and Figure 6 of the paper.
+Go to `./r_script`. Switch to an R environment and execute the `Rscript replication_script.Rmd` to produce Table 2, D.1, E.1 and Figure 6 of the paper.
 
 #### Step 5: Conjoint Analysis and "Ideal Point'' Generative Design 
 
 See the directory `/conjoint_analysis_and_ideal_point_design` for an example ipython notebook for running the hiearachical Bayeisan estimation and produce Table 6-7 and Figure 10-12 in the paper.
 
-Note that generating the ideal point design requires inputting the "ideal point" embedding values into the generative model from the disentanglement portion of this codebase. This is applicable for Figure 11. Modify the torch tensor in the 'save_cbc_images' function in the './post_model_search/utils/visualize.py' file to save the ideal point watch image.
+Note that generating the ideal point design requires inputting the "ideal point" embedding values into the generative model from the disentanglement portion of this codebase. This is applicable for Figure 11. Modify the torch tensor in the `save_cbc_images` function in the `./post_model_search/utils/visualize.py` file to save the ideal point watch image.
 
 ## List of Files
 
