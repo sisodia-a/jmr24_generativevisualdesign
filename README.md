@@ -258,7 +258,7 @@ Note that generating the ideal point design requires inputting the "ideal point"
 ./post_model_search/hyperparam.ini: configuration file for hyperparameters
 ./post_model_search/execute_step2.txt: file with example commands
 
-./post_model_search/main.py: main python execution file 
+./post_model_search/main.py: main python execution file
 ./post_model_search/main_viz.py: main python execution file to generate images for conjoint analysis
 
 ## Computing Resources
