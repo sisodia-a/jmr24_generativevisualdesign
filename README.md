@@ -142,9 +142,9 @@ The above command will create **vae_s10_posterior_traversals.png**: (Figure G2b)
 
 #### Step 3: UDR Calculation
 
-Copy the files stored in ‘results/<model_name>/‘ directory with the filename ending in ‘mean_params_test2.csv’ to the ‘calculate_udr’ folder. 
+Copy the files stored in `results/<model_name>/` directory with the filename ending in `mean_params_test2.csv` to the `calculate_udr` folder. 
 
-Go to './calculate_udr' to compare the UDRs for different supervisory signals. Switch to an R environment and execute the Rscript udr_calculation.R with the supervisory signal as the argument. For example:
+Go to `./calculate_udr` to compare the UDRs for different supervisory signals. Switch to an R environment and execute the Rscript udr_calculation.R with the supervisory signal as the argument. For example:
 
 ```
 Rscript udr_calculation.R --sup_signal='brand'
