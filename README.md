@@ -93,7 +93,7 @@ The above command will create a directory `results/<model-name>/` which will con
 * **mean_params_test2.csv**: mean visual characteristics of all watches in the test2 dataset. 
 * **mean_params_train.csv**: mean visual characteristics of all watches in the train dataset. 
 
-Select the value of $\beta$ and $\delta$ for each supervisory signal at which the average supervised loss across 10 seeds on a validation dataset is lowest. The supervised loss on the test set is stored as `sup_loss_test` in the json file with the name ending in `test_losses.log` in the directory `results/<model-name>/` for each combination of seed, $\beta$, $\delta$, and the supervisory signal
+Select the value of $\beta$ and $\delta$ for each supervisory signal at which the average supervised loss across 10 seeds on the test1 dataset is lowest. The supervised loss on the test1 set is stored as `sup_loss_test` in the first json object in the filename ending in `test_losses.log` in the directory `results/<model-name>/` for each combination of seed, $\beta$, $\delta$, and the supervisory signal. 
 
 #### Step 2: Comparison of Different Supervisory Signals
 
