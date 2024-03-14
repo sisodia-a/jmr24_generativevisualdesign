@@ -97,7 +97,7 @@ Select the value of $\beta$ and $\delta$ for each supervisory signal at which th
 
 #### Step 2: Comparison of Different Supervisory Signals
 
-Go to './post_model_search' and run disentanglement model at the optimal $\beta$ and $\delta$ for each supervisory signal combination at 10 different seeds. 
+Go to `./post_model_search` and run disentanglement model at the optimal $\beta$ and $\delta$ for each supervisory signal combination at 10 different seeds. 
 
 For the watch dataset, execute the commands listed in execute_step2.txt to use the values listed in the paper. For example, execute the following command:
 
