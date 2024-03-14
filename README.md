@@ -168,7 +168,7 @@ Go to './r_script'. Switch to an R environment and execute the Rscript replicati
 
 See the directory `/conjoint_analysis_and_ideal_point_design` for an example ipython notebook for running the hiearachical Bayeisan estimation and produce Table 6-7 and Figure 10-12 in the paper.
 
-Note that generating the ideal point design requires inputting the "ideal point" embedding values into the generative model from the disentanglement portion of this codebase. This is applicable for Figure 11.
+Note that generating the ideal point design requires inputting the "ideal point" embedding values into the generative model from the disentanglement portion of this codebase. This is applicable for Figure 11. Modify the torch tensor in the 'save_cbc_images' function in the './post_model_search/utils/visualize.py' file to save the ideal point watch image.
 
 ## List of Files
 
