@@ -99,7 +99,7 @@ Select the value of $\beta$ and $\delta$ for each supervisory signal at which th
 
 Go to `./post_model_search` and run disentanglement model at the optimal $\beta$ and $\delta$ for each supervisory signal combination at 10 different seeds. 
 
-For the watch dataset, execute the commands listed in execute_step2.txt to use the values listed in the paper. For example, execute the following command:
+For the watch dataset, execute the commands listed in `execute_step2.txt` to use the values listed in the paper. For example, execute the following command:
 
 ```
 python main.py --sup_signal brand_circa_movement -s 10 --name brand_circa_movement_s10 --btcvae-B 50 --btcvae-M 1
