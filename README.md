@@ -118,7 +118,7 @@ The above command will create a directory `results/continuousprice_s1/` which wi
 * **mean_params_test2.csv**: mean visual characteristics of all watches in the test2 dataset. 
 * **mean_params_train.csv**: mean visual characteristics of all watches in the train dataset. 
 
-Copy the files stored in ‘results/<model-name>/‘ directory with the filename ending in ‘mean_params_test2.csv’ to the ‘calculate_udr’ folder.
+Copy the files stored in ‘results/continuousprice_s1/‘ directory with the filename ending in ‘mean_params_test2.csv’ to the ‘calculate_udr’ folder.
 
 Execute the following commands to produce Figure 5, G.1 and G.2 of the paper.
 
