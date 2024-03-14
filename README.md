@@ -99,26 +99,24 @@ Select the value of $\beta$ and $\delta$ for each supervisory signal at which th
 
 Go to './post_model_search' and run disentanglement model at the optimal $\beta$ and $\delta$ for each supervisory signal combination at 10 different seeds. 
 
-For the watch dataset, execute the commands listed in execute_step2.txt to use the values listed in the paper. For example, see the first command in the file 'execute_step2.txt':
+For the watch dataset, execute the commands listed in execute_step2.txt to use the values listed in the paper. For example, execute the following command:
 
 ```
-python main.py --sup_signal continuousprice -s 1 --name continuousprice_s1 --btcvae-B 1 --btcvae-M 16 
+python main.py --sup_signal brand_circa_movement -s 10 --name brand_circa_movement_s10 --btcvae-B 50 --btcvae-M 1
 ```
 
-The above command will create a directory `results/continuousprice_s1/` which will contain:
+The above command will create a directory `results/brand_circa_movement_s10/` which will contain:
 
+* **model.pt**: The model at the end of training.
 * **specs.json**: The parameters used to run the program (default and modified with CLI).
 * **train_losses.csv**: All (sub-)losses computed during training on the train and validation dataset.
 * **test_losses.log**: All (sub-)losses computed at the end of training on the test1 and test2 dataset. 
-* **reconstruct_traverse.png**: latent traversals of latent dimensions. 
-* **filename_test1.csv**: filenames of all watches in the test1 dataset. 
-* **filename_test2.csv**: filenames of all watches in the test2 dataset. 
-* **filename_train.csv**: filenames of all watches in the train dataset. 
-* **mean_params_test1.csv**: mean visual characteristics of all watches in the test1 dataset. 
-* **mean_params_test2.csv**: mean visual characteristics of all watches in the test2 dataset. 
-* **mean_params_train.csv**: mean visual characteristics of all watches in the train dataset. 
-
-Copy the files stored in ‘results/continuousprice_s1/‘ directory with the filename ending in ‘mean_params_test2.csv’ to the ‘calculate_udr’ folder.
+* **brand_circa_movement_s10_filename_test1.csv**: filenames of all watches in the test1 dataset. 
+* **brand_circa_movement_s10_filename_test2.csv**: filenames of all watches in the test2 dataset. 
+* **brand_circa_movement_s10_filename_train.csv.csv**: filenames of all watches in the train dataset. 
+* **brand_circa_movement_s10_mean_params_test1.csv**: mean visual characteristics of all watches in the test1 dataset. 
+* **brand_circa_movement_s10_mean_params_test2.csv**: mean visual characteristics of all watches in the test2 dataset. 
+* **brand_circa_movement_s10_mean_params_train.csv**: mean visual characteristics of all watches in the train dataset. 
 
 Execute the following commands to produce Figure 5, G.1 and G.2 of the paper.
 
@@ -130,7 +128,29 @@ python main_viz.py --name vae_s10
 python main_viz.py --name ae_s10
 ```
 
+The above command will create the following file (Figure 5 and Figure G1a) in `results/brand_circa_movement_s10/`:
+
+* **brand_circa_movement_s10_posterior_traversals.png**: posterior traversals of latent dimensions. 
+
+The above command will create the following file (Figure G1b) in `results/circa_s10/`:
+
+* **circa_s10_posterior_traversals.png**: posterior traversals of latent dimensions. 
+
+The above command will create the following file (Figure G1c) in `results/unsupervised_s10/`:
+
+* **unsupervised_s10_posterior_traversals.png**: posterior traversals of latent dimensions. 
+
+The above command will create the following file (Figure G2a) in `results/ae_s10/`:
+
+* **ae_s10_posterior_traversals.png**: posterior traversals of latent dimensions. 
+
+The above command will create the following file (Figure G2b) in `results/vae_s10/`:
+
+* **vae_s10_posterior_traversals.png**: posterior traversals of latent dimensions. 
+
 #### Step 3: UDR Calculation
+
+Copy the files stored in ‘results/<model_name>/‘ directory with the filename ending in ‘mean_params_test2.csv’ to the ‘calculate_udr’ folder. 
 
 Go to './calculate_udr' to compare the UDRs for different supervisory signals. Switch to an R environment and execute the Rscript udr_calculation.R with the supervisory signal as the argument. For example:
 
