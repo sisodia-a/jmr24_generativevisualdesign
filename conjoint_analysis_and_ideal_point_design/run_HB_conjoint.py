@@ -16,6 +16,7 @@ import os
 import pymc as pm
 import jax
 import pymc.sampling_jax as sampling_jax
+import numpy as np
 
 # -----------------------------------------------------------------------------------------------
 #                                 Globals
@@ -27,7 +28,8 @@ NUM_ATTRIBUTES = 6
 NUM_TASKS = 15
 NUM_TRAIN_TASKS = 13
 NUM_TEST_TASKS = 2
-NUM_COVARIATES = 6
+# NUM_COVARIATES = 6
+NUM_COVARIATES = 7
 
 choice_and_demo_coords = {"visual_attributes": ["dialcolor",
                                                 "dialshape",
@@ -36,13 +38,14 @@ choice_and_demo_coords = {"visual_attributes": ["dialcolor",
                                                 "knobsize",
                                                 "rimcolor"],
 
-                          "covariates": ["DemoGender_male",
-                                         "DemoGender_female",
-                                         "DemoAge_real",
-                                         "DemoIncome_real",
-                                         "DemoEducation_real",
-                                         "DemoAestheticImportance1_1_real"
-                                         ],
+                          "covariates": ["const_value",
+                              "DemoGender_male",
+                              "DemoGender_female",
+                              "DemoAge_real",
+                              "DemoIncome_real",
+                              "DemoEducation_real",
+                              "DemoAestheticImportance1_1_real",
+                              ],
 
 
                           "resp_ind": range(NUM_RESPONDENTS),
@@ -54,23 +57,23 @@ os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
 # -----------------------------------------------------------------------------------------------
 #          Hierarchical Bayes Conjoint Model
 #          Level 1: Choice Likelihood (Bernoulli)
-#          Level 2: Population Prior - Mean (Respondent Covariats x Visual Attr)
+#          Level 2: Population Prior - Mean (Respondent Covariates x Visual Attr) + Intercept (Visual Attr x 1)
 #          Level 2: Population Prior - Full Covariance w/ Cholesky Decomp Sampling
-#          Level 3: Hyperpriors - Including mean offset term
-#          Defaults: GPU-Accel via Numpyro and Jax (all devices, change w/ CUDA_VISIBLE_DEVICES)
+#          -------: (Deprecated) Hyperpriors - Theta Intercept as Mean Offset Term --> Converted to more standard 2-level model w/ 1's appended to Z
+#          Defaults: GPU-Accel via Numpyro and Jax (1 device, change to Multi-GPU w/ CUDA_VISIBLE_DEVICES)
+#                    Single GPU replicates paper exactly.  Multi-GPU is nondeterministic.
 # -----------------------------------------------------------------------------------------------
 
 def run_HB_conjoint_model(X_train,
                           Y_train,
                           Z_df,
-                          mu_theta_hyper_std=1.5,
-                          theta_std=1.5,
-                          beta_covar_dist=1.5,
-                          beta_covar_eta=6.0,
-                          num_draws=5000,
-                          num_tune=5000,
-                          num_chains=4, # num of GPUs is most efficient for RAM -> VRAM
-                          target_accept=0.8,
+                          theta_std=0.25,
+                          beta_covar_dist=0.5,
+                          beta_covar_eta=4.0,
+                          num_draws=2000,
+                          num_tune=2000,
+                          num_chains=1, # num of GPUs is most efficient for RAM -> VRAM
+                          target_accept=0.65,
                           random_seed=0,
                           ):
 
@@ -82,8 +85,6 @@ def run_HB_conjoint_model(X_train,
     # Define HB Model - Wrap in self-context
     with pm.Model(coords=choice_and_demo_coords) as HB_ind_seg_model:
 
-        #     X_attributes_left = pm.MutableData("X_attributes_left", X[:,:,0,:], dims=("resp_ind", "task_ind", "visual_attributes"))
-        #     X_attributes_right = pm.MutableData("X_attributes_right", X[:,:,1,:], dims=("resp_ind", "task_ind", "visual_attributes"))
         X_attributes_left = pm.ConstantData("X_attributes_left",
                                             X_train[:, :, 0, :],
                                             dims=("resp_ind", "task_ind", "visual_attributes"))
@@ -93,26 +94,25 @@ def run_HB_conjoint_model(X_train,
                                              dims=("resp_ind", "task_ind", "visual_attributes"))
 
         covariates = pm.ConstantData("covariate_vars",
-                                     Z_df.to_numpy().T,
-                                     # dims=('resp_ind', 'covariates'))
-                                     dims = ('covariates', 'resp_ind'))
+                np.hstack([np.ones((Z_df.shape[0], 1)), Z_df.to_numpy()]).T,
+                dims=('covariates', 'resp_ind'))
 
-        # Level 3: Hyperprior
-        mu_theta_hyper = pm.Normal('theta_mu_hyper',
-                                   mu=0,
-                                   sigma=mu_theta_hyper_std,
-                                   # dims=('covariates', 'visual_attributes'))
-                                   dims=('visual_attributes', 'covariates'))
+        # Main change from prior open source code release - Changed to more standard formulation of \Theta_0 intercept term
+        # Specifically: Removing explicit hyperprior intercept term in lieu of adding a vector of 1's to the covariate matrix Z
+        # # Level 3: Hyperprior
+        # mu_theta_hyper = pm.Normal('theta_mu_hyper',
+        #                            mu=0,
+        #                            sigma=mu_theta_hyper_std,
+        #                            dims=('visual_attributes', 'covariates'))
 
         #  Level 2: Population Prior
         thetas = pm.Normal('thetas',
-                           mu=mu_theta_hyper,
+                           # mu=mu_theta_hyper,
+                           mu=0,
                            sigma=theta_std,
-                           # dims=('covariates', 'visual_attributes')
                            dims=('visual_attributes', 'covariates'))
 
         mu_beta = pm.Deterministic("mu_betas",
-                                   # pm.math.dot(covariates, thetas),
                                    pm.math.dot(thetas, covariates).T,
                                    dims=('resp_ind', 'visual_attributes'))
 
@@ -142,8 +142,6 @@ def run_HB_conjoint_model(X_train,
         pm.Bernoulli("y",
                      p=p,
                      observed=Y_train,
-                     #                  observed=Y,
-                     #                 observed=valid_choices_and_demo_df["Response"],
                      dims=("resp_ind", "task_ind"))
 
         idata_seg = sampling_jax.sample_numpyro_nuts(draws=num_draws,

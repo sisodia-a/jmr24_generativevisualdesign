@@ -81,7 +81,7 @@ else:
 #                                 Get Data
 # -----------------------------------------------------------------------------------------------
 
-def get_data(use_ankit_thresholds=True):
+def get_data(use_thresholds=True):
     raw_conjoint_df = pd.read_csv(RAW_CONJOINT_PATH + CONJOINT_DATA_FILENAME,
                                   delimiter=",",
                                   header=0,
@@ -92,19 +92,19 @@ def get_data(use_ankit_thresholds=True):
                                  index_col=0)
     if PREDICTION_TASK == "generated_watches":
         # raw_choices_df = raw_choices_df.copy()
-        if use_ankit_thresholds:
+        if use_thresholds:
             rescaling_dict = {1 : -1, 2 : 0, 3 : 1}
             raw_choices_df[["dialcolor", "dialshape", "strapcolor", "dialsize", "knobsize", "rimcolor"]] \
                 = raw_choices_df[["dialcolor", "dialshape", "strapcolor", "dialsize", "knobsize", "rimcolor"]].replace(rescaling_dict)
 
 
-            ankit_thresholds = pd.read_csv("../../data_mappings/conj_gen_file_mapping_AnkitThresholds.csv")
-            dialcolor_dict = {key: value for key, value in zip([-1, 0, 1], ankit_thresholds["DialColor"].unique())}
-            dialshape_dict = {key: value for key, value in zip([-1, 0, 1], ankit_thresholds["DialShape"].unique())}
-            strapcolor_dict = {key: value for key, value in zip([-1, 0, 1], ankit_thresholds["StrapColor"].unique())}
-            dialsize_dict = {key: value for key, value in zip([-1, 0, 1], ankit_thresholds["DialSize"].unique())}
-            knobsize_dict = {key: value for key, value in zip([-1, 0, 1], ankit_thresholds["KnobSize"].unique())}
-            rimcolor_dict = {key: value for key, value in zip([-1, 0, 1], ankit_thresholds["RimColor"].unique())}
+            watch_thresholds = pd.read_csv("../../data_mappings/conj_gen_file_mapping_Thresholds.csv")
+            dialcolor_dict = {key: value for key, value in zip([-1, 0, 1], watch_thresholds["DialColor"].unique())}
+            dialshape_dict = {key: value for key, value in zip([-1, 0, 1], watch_thresholds["DialShape"].unique())}
+            strapcolor_dict = {key: value for key, value in zip([-1, 0, 1], watch_thresholds["StrapColor"].unique())}
+            dialsize_dict = {key: value for key, value in zip([-1, 0, 1], watch_thresholds["DialSize"].unique())}
+            knobsize_dict = {key: value for key, value in zip([-1, 0, 1], watch_thresholds["KnobSize"].unique())}
+            rimcolor_dict = {key: value for key, value in zip([-1, 0, 1], watch_thresholds["RimColor"].unique())}
 
             raw_choices_df["dialcolor"] = raw_choices_df["dialcolor"].map(dialcolor_dict)
             raw_choices_df["dialshape"] = raw_choices_df["dialshape"].map(dialshape_dict)
@@ -139,7 +139,6 @@ def create_X_Y_full_matrices(raw_choices_df):
 
 def create_X_Y_generated_full_matrices(raw_choices_df):
     X = np.zeros([NUM_RESPONDENTS, NUM_TASKS, NUM_ALTERNATIVES, NUM_ATTRIBUTES], dtype="str")
-    # X = np.zeros([NUM_RESPONDENTS, NUM_TASKS, NUM_ALTERNATIVES, NUM_ATTRIBUTES], dtype=np.float32)
     Y = np.zeros([NUM_RESPONDENTS, NUM_TASKS])
 
     for x_ind, resp_ind in enumerate(raw_choices_df.index.unique().values):
@@ -195,9 +194,8 @@ def create_X_Y_Z_generated_full_matrices(raw_choices_df, raw_conjoint_df):
     return X, Y, Z
 
 def create_embedding_X_matrix(X_full, embedded_real_df_raw=None):
-    # Map to Conjoint from Ankit Mapping
-    mapping_ankit_to_conjoint = embedded_real_df_raw["conjoint_file_name"].apply(lambda x: x.split("_")[1].split(".")[0]).astype(int)
-    embedded_real_df_raw_sorted = embedded_real_df_raw.loc[np.argsort(mapping_ankit_to_conjoint.values)]
+    mapping_to_conjoint = embedded_real_df_raw["conjoint_file_name"].apply(lambda x: x.split("_")[1].split(".")[0]).astype(int)
+    embedded_real_df_raw_sorted = embedded_real_df_raw.loc[np.argsort(mapping_to_conjoint.values)]
     embedded_real_df_raw_sorted.index = range(len(embedded_real_df_raw_sorted))
     embedded_real_matrix = embedded_real_df_raw_sorted[["Dial_Color", "Dial_Shape", "Strap_Color", "Dial_Size", "Knob_Size", "Rim_Color"]]
 
@@ -212,9 +210,8 @@ def create_embedding_X_matrix(X_full, embedded_real_df_raw=None):
     return x_full_embeddings
 
 def create_entangled_embedding_X_matrix(X_full, embedded_real_df_raw=None):
-    # Map to Conjoint from Ankit Mapping
-    mapping_ankit_to_conjoint = embedded_real_df_raw["conjoint_file_name"].apply(lambda x: x.split("_")[1].split(".")[0]).astype(int)
-    embedded_real_df_raw_sorted = embedded_real_df_raw.loc[np.argsort(mapping_ankit_to_conjoint.values)]
+    mapping_to_conjoint = embedded_real_df_raw["conjoint_file_name"].apply(lambda x: x.split("_")[1].split(".")[0]).astype(int)
+    embedded_real_df_raw_sorted = embedded_real_df_raw.loc[np.argsort(mapping_to_conjoint.values)]
     embedded_real_df_raw_sorted.index = range(len(embedded_real_df_raw_sorted))
     embedded_real_matrix = embedded_real_df_raw_sorted[["vae_1","vae_2", "vae_3", "vae_4", "vae_5", "vae_6"]]
 
