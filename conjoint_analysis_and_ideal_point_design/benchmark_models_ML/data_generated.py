@@ -1,10 +1,10 @@
 """
 #############################################################################################
-                Project: JMR23 - Disentangling Watches
-                Author: Alex Burnap
-                Email: alex.burnap@yale.edu
-                Date: April 6, 2023
-                License: MIT
+    Project: Generative Interpretable Visual Design: Using Disentanglement for Visual Conjoint Analysis
+    Author: Ankit Sisodia, Alex Burnap, Vineet Kumar
+    Email: asisodia@purdue.edu, alex.burnap@yale.edu, vineet.kumar@yale.edu
+    Date: July 2024
+    License: MIT
 #############################################################################################
 """
 
