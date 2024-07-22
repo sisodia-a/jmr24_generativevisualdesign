@@ -1,10 +1,12 @@
 '''
-        Project: Generative Interpretable Visual Design: Using Disentanglement for Visual Conjoint Analysis
-        Authors: Ankit Sisodia, Purdue University
-        Email: asisodia@purdue.edu
+Project: Generative Interpretable Visual Design: Using Disentanglement for Visual Conjoint Analysis
+Author: Ankit Sisodia, Alex Burnap, Vineet Kumar
+Email: asisodia@purdue.edu, alex.burnap@yale.edu, vineet.kumar@yale.edu
+Date: July 2024
+License: MIT
 
-        Portions of Code From or Modified from Open Source Projects:
-        https://github.com/YannDubs/disentangling-vae
+Notes: Portions of Code From or Modified from Open Source Projects:
+       https://github.com/YannDubs/disentangling-vae
 '''
 import argparse
 import logging

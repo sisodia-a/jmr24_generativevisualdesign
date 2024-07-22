@@ -1,3 +1,13 @@
+'''
+Project: Generative Interpretable Visual Design: Using Disentanglement for Visual Conjoint Analysis
+Author: Ankit Sisodia, Alex Burnap, Vineet Kumar
+Email: asisodia@purdue.edu, alex.burnap@yale.edu, vineet.kumar@yale.edu
+Date: July 2024
+License: MIT
+
+Notes: Portions of Code From or Modified from Open Source Projects:
+       https://github.com/YannDubs/disentangling-vae
+'''
 import torch
 from torch import nn
 

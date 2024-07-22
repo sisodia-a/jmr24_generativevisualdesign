@@ -1,5 +1,10 @@
 """
-Module containing all vae losses.
+Project: Generative Interpretable Visual Design: Using Disentanglement for Visual Conjoint Analysis
+Author: Ankit Sisodia, Alex Burnap, Vineet Kumar
+Email: asisodia@purdue.edu, alex.burnap@yale.edu, vineet.kumar@yale.edu
+Date: July 2024
+License: MIT
+Notes: Module containing all vae losses.
 """
 import abc
 import math

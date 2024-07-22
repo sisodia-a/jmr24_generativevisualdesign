@@ -1,5 +1,10 @@
 """
-Module containing the main VAE class.
+Project: Generative Interpretable Visual Design: Using Disentanglement for Visual Conjoint Analysis
+Author: Ankit Sisodia, Alex Burnap, Vineet Kumar
+Email: asisodia@purdue.edu, alex.burnap@yale.edu, vineet.kumar@yale.edu
+Date: July 2024
+License: MIT
+Notes: Module containing the main VAE class.
 """
 import numpy as np
 import torch

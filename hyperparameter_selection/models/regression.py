@@ -1,5 +1,10 @@
 """
-Ankit's Module containing the regression model
+Project: Generative Interpretable Visual Design: Using Disentanglement for Visual Conjoint Analysis
+Author: Ankit Sisodia, Alex Burnap, Vineet Kumar
+Email: asisodia@purdue.edu, alex.burnap@yale.edu, vineet.kumar@yale.edu
+Date: July 2024
+License: MIT
+Notes: Ankit's Module containing the regression model
 """
 import numpy as np
 import torch
