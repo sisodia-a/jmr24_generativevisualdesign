@@ -1,7 +1,7 @@
 ---
-title: "Replication Script for Figures & Tables"
-author: "Ankit Sisodia"
-date: "Mar 2024"
+title: "Replication Script for Figures & Tables for Generative Interpretable Visual Design: Using Disentanglement for Visual Conjoint Analysis"
+author: "Ankit Sisodia, Alex Burnap, Vineet Kumar"
+date: "Jul 2024"
 output:
   html_document: default
   pdf_document: default
