@@ -30,8 +30,6 @@ This codebase was built using the Pytorch neural net framework.  However, it als
 #### Data
 To download the dataset, please contact the authors. Copy the data files to `./hyperparameter_selection/data/watches/` and `./post_model_search/data/watches/` directories.
 
-[* #### [Watches Dataset](https://www.dropbox.com/scl/fo/akj3w8pat0lg1fa4ax480/h?rlkey=5d4ykq5br3kzkwarhi4ld4na8&dl=0)]:
-
 ## Replication Steps
 
 #### Step 1: Grid Search for Hyperparamaters
