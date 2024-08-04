@@ -5,13 +5,13 @@ Code to replicate results in, "Generative Interpretable Visual Design: Using Dis
 
 If you find this work useful, please use the following citation information in plaintext or BibTeX format:
 
-Sisodia, A, Burnap, A, and Kumar, V (2024). Generative Interpretable Visual Design: Using Disentanglement for Visual Conjoint Analysis. Journal of Marketing Research (under review).
+Sisodia, A, Burnap, A, and Kumar, V (2024). Generative Interpretable Visual Design: Using Disentanglement for Visual Conjoint Analysis. Journal of Marketing Research (Accepted).
 
 ```
 @article{sisodia2024disentangelment,
   title= Generative Interpretable Visual Design: Using Disentanglement for Visual Conjoint Analysis},
   author={Sisodia, A, Burnap, A, and Kumar, V},
-  journal={Journal of Marketing Research (under review)},
+  journal={Journal of Marketing Research (Accepted)},
   volume={XXX},
   number={XXX},
   pages={XXX},
@@ -267,13 +267,13 @@ We used 64G GPU to run each model instance of 100 epoch, 64 batch size, 5e-4 lea
 
 Feel free to use this code for your research. If you find this code useful, please use the following citation information in plaintext or BibTeX format:
 
-Sisodia, A, Burnap, A, and Kumar, V (2024). Generative Interpretable Visual Design: Using Disentanglement for Visual Conjoint Analysis. Journal of Marketing Research (under review).
+Sisodia, A, Burnap, A, and Kumar, V (2024). Generative Interpretable Visual Design: Using Disentanglement for Visual Conjoint Analysis. Journal of Marketing Research (Accepted).
 
 ```
 @article{sisodia2024disentangelment,
   title= Generative Interpretable Visual Design: Using Disentanglement for Visual Conjoint Analysis},
   author={Sisodia, A, Burnap, A, and Kumar, V},
-  journal={Journal of Marketing Research (under review)},
+  journal={Journal of Marketing Research (Accepted)},
   volume={XXX},
   number={XXX},
   pages={XXX},
