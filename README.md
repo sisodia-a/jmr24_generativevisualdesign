@@ -265,7 +265,7 @@ We used 64G GPU to run each model instance of 100 epoch, 64 batch size, 5e-4 lea
 
 Feel free to use this code for your research. If you find this code useful, please use the following citation information in plaintext or BibTeX format:
 
-Sisodia, A, Burnap, A, and Kumar, V (2024). Generative Interpretable Visual Design: Using Disentanglement for Visual Conjoint Analysis. Journal of Marketing Research (Accepted).
+Sisodia, A., Burnap, A., & Kumar, V. (2024). Generative Interpretable Visual Design: Using Disentanglement for Visual Conjoint Analysis. Journal of Marketing Research, 0(0). https://doi.org/10.1177/00222437241276736
 
 ```
 @article{sisodia2024generative,
