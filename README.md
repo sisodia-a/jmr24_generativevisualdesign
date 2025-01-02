@@ -8,15 +8,13 @@ If you find this work useful, please use the following citation information in p
 Sisodia, A, Burnap, A, and Kumar, V (2024). Generative Interpretable Visual Design: Using Disentanglement for Visual Conjoint Analysis. Journal of Marketing Research (Accepted).
 
 ```
-@article{sisodia2024disentangelment,
+@article{sisodia2024generative,
   title= Generative Interpretable Visual Design: Using Disentanglement for Visual Conjoint Analysis},
-  author={Sisodia, A, Burnap, A, and Kumar, V},
-  journal={Journal of Marketing Research (Accepted)},
-  volume={XXX},
-  number={XXX},
-  pages={XXX},
+  author={Sisodia, Ankit and Burnap, Alex and Kumar, Vineet},
+  journal={Journal of Marketing Research},
   year={2024},
-  publisher={XXX}
+  publisher={SAGE Publications Sage CA: Los Angeles, CA},
+  url={https://doi.org/10.1177/00222437241276736},
 }
 ```
 This code will reproduce Figures (5, 6, 10, 12, G.1, G.2) and Tables (2, 6, 7, D.1, E.1, F.1) of the paper.
@@ -270,15 +268,13 @@ Feel free to use this code for your research. If you find this code useful, plea
 Sisodia, A, Burnap, A, and Kumar, V (2024). Generative Interpretable Visual Design: Using Disentanglement for Visual Conjoint Analysis. Journal of Marketing Research (Accepted).
 
 ```
-@article{sisodia2024disentangelment,
+@article{sisodia2024generative,
   title= Generative Interpretable Visual Design: Using Disentanglement for Visual Conjoint Analysis},
-  author={Sisodia, A, Burnap, A, and Kumar, V},
-  journal={Journal of Marketing Research (Accepted)},
-  volume={XXX},
-  number={XXX},
-  pages={XXX},
+  author={Sisodia, Ankit and Burnap, Alex and Kumar, Vineet},
+  journal={Journal of Marketing Research},
   year={2024},
-  publisher={XXX}
+  publisher={SAGE Publications Sage CA: Los Angeles, CA},
+  url={https://doi.org/10.1177/00222437241276736},
 }
 ```
 
